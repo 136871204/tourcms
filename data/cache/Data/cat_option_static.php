@@ -1,0 +1,235 @@
+<?php if(!defined('ZHPHP_PATH'))exit;
+return array (
+  1 => 
+  array (
+    'id' => '1',
+    'cityname' => '中国',
+    'isopen' => '1',
+    'pid' => '0',
+    'displayorder' => '9999',
+    'has_children' => '9',
+    'level' => 0,
+    'name' => '中国',
+  ),
+  3 => 
+  array (
+    'id' => '3',
+    'cityname' => '北京',
+    'isopen' => '1',
+    'pid' => '1',
+    'displayorder' => '9999',
+    'has_children' => '0',
+    'level' => 1,
+    'name' => '北京',
+  ),
+  4 => 
+  array (
+    'id' => '4',
+    'cityname' => '天津',
+    'isopen' => '1',
+    'pid' => '1',
+    'displayorder' => '9999',
+    'has_children' => '0',
+    'level' => 1,
+    'name' => '天津',
+  ),
+  5 => 
+  array (
+    'id' => '5',
+    'cityname' => '广州',
+    'isopen' => '1',
+    'pid' => '1',
+    'displayorder' => '9999',
+    'has_children' => '0',
+    'level' => 1,
+    'name' => '广州',
+  ),
+  6 => 
+  array (
+    'id' => '6',
+    'cityname' => '深圳',
+    'isopen' => '1',
+    'pid' => '1',
+    'displayorder' => '9999',
+    'has_children' => '0',
+    'level' => 1,
+    'name' => '深圳',
+  ),
+  7 => 
+  array (
+    'id' => '7',
+    'cityname' => '成都',
+    'isopen' => '1',
+    'pid' => '1',
+    'displayorder' => '9999',
+    'has_children' => '0',
+    'level' => 1,
+    'name' => '成都',
+  ),
+  8 => 
+  array (
+    'id' => '8',
+    'cityname' => '大连',
+    'isopen' => '1',
+    'pid' => '1',
+    'displayorder' => '9999',
+    'has_children' => '0',
+    'level' => 1,
+    'name' => '大连',
+  ),
+  9 => 
+  array (
+    'id' => '9',
+    'cityname' => '青岛',
+    'isopen' => '1',
+    'pid' => '1',
+    'displayorder' => '9999',
+    'has_children' => '0',
+    'level' => 1,
+    'name' => '青岛',
+  ),
+  2 => 
+  array (
+    'id' => '2',
+    'cityname' => '上海',
+    'isopen' => '1',
+    'pid' => '1',
+    'displayorder' => '9999',
+    'has_children' => '0',
+    'level' => 1,
+    'name' => '上海',
+  ),
+  10 => 
+  array (
+    'id' => '10',
+    'cityname' => '香港',
+    'isopen' => '1',
+    'pid' => '1',
+    'displayorder' => '9999',
+    'has_children' => '0',
+    'level' => 1,
+    'name' => '香港',
+  ),
+  13 => 
+  array (
+    'id' => '13',
+    'cityname' => '日本',
+    'isopen' => '1',
+    'pid' => '0',
+    'displayorder' => '9999',
+    'has_children' => '8',
+    'level' => 0,
+    'name' => '日本',
+  ),
+  11 => 
+  array (
+    'id' => '11',
+    'cityname' => '冲绳',
+    'isopen' => '1',
+    'pid' => '13',
+    'displayorder' => '9999',
+    'has_children' => '0',
+    'level' => 1,
+    'name' => '冲绳',
+  ),
+  22 => 
+  array (
+    'id' => '22',
+    'cityname' => '名古屋',
+    'isopen' => '1',
+    'pid' => '13',
+    'displayorder' => '9999',
+    'has_children' => '0',
+    'level' => 1,
+    'name' => '名古屋',
+  ),
+  12 => 
+  array (
+    'id' => '12',
+    'cityname' => '大阪',
+    'isopen' => '1',
+    'pid' => '13',
+    'displayorder' => '9999',
+    'has_children' => '0',
+    'level' => 1,
+    'name' => '大阪',
+  ),
+  14 => 
+  array (
+    'id' => '14',
+    'cityname' => '新宿',
+    'isopen' => '1',
+    'pid' => '13',
+    'displayorder' => '9999',
+    'has_children' => '0',
+    'level' => 1,
+    'name' => '新宿',
+  ),
+  15 => 
+  array (
+    'id' => '15',
+    'cityname' => '京都',
+    'isopen' => '1',
+    'pid' => '13',
+    'displayorder' => '9999',
+    'has_children' => '0',
+    'level' => 1,
+    'name' => '京都',
+  ),
+  16 => 
+  array (
+    'id' => '16',
+    'cityname' => '神户',
+    'isopen' => '1',
+    'pid' => '13',
+    'displayorder' => '9999',
+    'has_children' => '0',
+    'level' => 1,
+    'name' => '神户',
+  ),
+  18 => 
+  array (
+    'id' => '18',
+    'cityname' => '东京',
+    'isopen' => '1',
+    'pid' => '13',
+    'displayorder' => '9999',
+    'has_children' => '0',
+    'level' => 1,
+    'name' => '东京',
+  ),
+  21 => 
+  array (
+    'id' => '21',
+    'cityname' => '札幌',
+    'isopen' => '1',
+    'pid' => '13',
+    'displayorder' => '9999',
+    'has_children' => '0',
+    'level' => 1,
+    'name' => '札幌',
+  ),
+  19 => 
+  array (
+    'id' => '19',
+    'cityname' => '亚洲',
+    'isopen' => '1',
+    'pid' => '0',
+    'displayorder' => '9999',
+    'has_children' => '1',
+    'level' => 0,
+    'name' => '亚洲',
+  ),
+  20 => 
+  array (
+    'id' => '20',
+    'cityname' => '首尔',
+    'isopen' => '1',
+    'pid' => '19',
+    'displayorder' => '9999',
+    'has_children' => '0',
+    'level' => 1,
+    'name' => '首尔',
+  ),
+);
+?>
