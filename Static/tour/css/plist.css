@@ -1,0 +1,354 @@
+/* CSS Document   所有产品列表的css*/
+
+.x-body a:hover{
+	
+}
+.search-dest-tr td{
+	background:#090
+}
+.x-body a:hover{
+	text-decoration:none;
+}
+.panel_bar{
+	margin-left:20px;
+}
+.panel_bar .abtn {
+    background: #008ed8;
+	color: #fff;
+    padding: 4px 10px;
+    height: 24px;
+    line-height: 24px;
+    margin-right: 10px;
+	border-radius:3px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	-ms-border-radius:3px;
+}
+.panel_bar a:hover{
+	text-decoration:underline;
+}
+.panel_bar #search{
+	height:24px;
+	border:1px solid #008ED8;
+}
+.grid_column_text{
+	float:left;
+	}
+.grid_column_help{
+	float:left;
+	margin-top:2px;
+	margin-left:2px;
+	cursor:pointer;
+}
+.dest-tip .x-tip-body-default{
+	color:#008ed8;
+	font-size:12px;
+	
+}
+
+/* dest--public  */
+
+
+.search-bar{
+	width:99%;
+	height:30px;
+	padding-left:15px;
+	background:#DCE4EA;
+	/*border-bottom:2px solid #417B97;*/
+	line-height:30px;
+}
+
+.search-bar .display-mod{
+	float:right;
+	margin-right:10px;
+}
+.search-bar .display-mod span a{
+	float:left;
+	width:30px;
+	height:30px;
+	margin-right:1px;
+	font-size:0;
+	background:url(../images/jc-tc-gys.gif) no-repeat
+}
+.search-bar .display-mod1{
+	float:right;
+	margin-right:10px;
+}
+.search-bar .display-mod1 span a{
+	width:30px;
+	height:30px;
+	margin-right:1px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.search-bar .display-mod span.list-1 a{
+	background-position:-30px 0}
+.search-bar .display-mod span.list-2 a{
+	background-position:-30px -30px}
+.search-bar .display-mod span.list-3 a{
+	background-position:-30px -60px}
+.search-bar .display-mod span.list-1 a.on{
+	background-position:0 0;
+}
+.search-bar .display-mod span.list-2 a.on{
+	background-position:0 -30px;
+}
+.search-bar .display-mod span.list-3 a.on{
+	background-position:0 -60px;
+}
+
+
+
+.search-bar .display-mdd{
+	float:right;
+	margin-right:10px}
+.search-bar .display-mdd a{
+	float:left;
+	color:#666;
+	height:26px;
+	line-height:26px;
+	margin-top:4px;
+	padding:0 10px}
+.search-bar .display-mdd a.on{
+	color:#008ed8;
+	border-top-left-radius:3px;
+	border-top-right-radius:3px;
+	background:#fff}
+
+.suit-title
+{
+	color:#396769;
+}
+.line-title
+{
+	color:#006498;
+}
+.product-title
+{
+	color:#006498;
+}
+.row-hidden{
+	display:none;
+}
+
+.suit-cell{
+	color:#396769;
+}
+
+.suit-tr .x-grid-cell
+{
+	border-color:#fafafa;
+}
+.parent-line-tr .x-grid-cell
+{
+	border-color:#fafafa;
+}
+.parent-product-tr .x-grid-cell
+{
+	border-color:#fafafa;
+}
+.suit-tr .line-ch,.parent-line-tr .line-ch
+{
+	border-bottom:0px;
+}
+.suit-tr .line-ch,.parent-product-tr .line-ch
+{
+	border-bottom:0px;
+}
+.suit-tr  .line-order,.parent-line-tr .line-order
+{
+	border-bottom:0px;
+}
+.suit-tr  .product-order,.parent-line-tr .product-order
+{
+	border-bottom:0px;
+}
+.suit-tr  .line-order,.parent-product-tr .line-order
+{
+	border-bottom:0px;
+}
+.suit-tr  .product-order,.parent-product-tr .product-order
+{
+	border-bottom:0px;
+}
+.attr-search-cs tr,.splace-search-cs tr{
+	height:30px;
+	line-height:30px;
+	color:#C2DBEC;
+	font-size:12px;
+}
+.attr-search-cs sp-name,.splace-search-cs sp-name{
+	float:left;
+	margin-right:5px;
+}
+.attr-search-cs span a,.splace-search-cs span a{
+	color:#C2DBEC;
+	padding:4px;
+}
+.attr-search-cs span a:hover,.splace-search-cs span a:hover{
+	background:#036;
+}
+.attr-search-cs span a.active,.splace-search-cs span a.active{
+	background-color:#eee;
+	color:black;
+}
+
+.dest-cs-dlg{
+	line-height:30px;
+	color:#C2DBEC;
+	font-size:12px;
+}
+.dest-cs-dlg .sp-name{
+	margin-right:8px;
+} 
+.dest-cs-dlg button{
+	padding:2px 4px;
+	color:#296B9B;
+	font-size:12px;
+	cursor:pointer;
+}
+.dest-cs-dlg span a{
+	color:#C2DBEC;
+	padding:4px;
+}
+.dest-cs-dlg span a:hover{
+	background:#036;
+}
+.dest-cs-dlg span a.active{
+	background-color:#eee;
+	color:black;
+}
+.dest-cs-dlg .step_list{
+	padding-left:20px;
+	border-top:1px solid #aaa;
+	margin-top:5px;
+}
+.search-title{
+	margin-left:20px;
+}
+.search-title button{
+	padding:1px 4px;
+	cursor:pointer;
+}
+.search-title input{
+	border:1px solid #edf6fa;
+	line-height:18px;
+}
+.suit-tr .product-ch
+{
+	border-bottom:0px;
+}
+.suit-tr .product-ch,.parent-product-tr .product-ch
+{
+	border-bottom:0px;
+}
+
+.kind-search-cs span a{
+	color:#C2DBEC;
+	padding:2px 4px;
+}
+.kind-search-cs span a:hover{
+	background:#036;
+}
+.kind-search-cs span a.active{
+	background-color:#eee;
+	color:black;
+}
+.list-top-set{
+
+}
+.list-top-set .list-web-pad{
+	height:40px;
+}
+.list-top-set .list-web-ct{
+	height:40px;
+	vertical-align:central;
+}
+.list-top-set .list-web-ct-lt
+{
+	width:50%;
+}
+.list-top-set .list-web-ct-rt{
+	text-align:right;
+	width:48%;
+}
+.list-top-set .list-web-ct-lt,.list-top-set  .list-web-ct-rt{
+    float: left;
+    height: 30px;
+    vertical-align: middle;
+    line-height: 30px;
+    margin-top: 10px;
+}
+.dest-add-btn{
+	padding:1px 8px;
+	cursor:pointer;
+	color:#008ED8;}
+.df-add-btn{
+	-webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.2);
+	display: inline-block;
+	vertical-align: middle;
+	zoom: 1;
+	border: 1px solid #d4d4d4;
+	height: 24px;
+	line-height: 24px;
+	padding: 0px 12px;
+	color: #666666;
+	text-shadow: 0 1px 1px white;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #43aee4), color-stop(100%, #008ed8));
+	background: -webkit-linear-gradient(top, #43aee4, #008ed8);
+	background: -moz-linear-gradient(top, #43aee4, #008ed8);
+	background: -o-linear-gradient(top, #43aee4, #008ed8);
+	background: linear-gradient(top, #43aee4, #008ed8);
+	background-color: #00a1cb;
+	border-color: #007998;
+	color: white;
+	text-shadow: 0 -1px 1px rgba(0, 40, 50, 0.35);
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px}
+.search-dest-tr td{
+	background:#e2eff8
+}
+.x-body a:hover{
+	text-decoration:none;
+}
+.panel_bar{
+	margin-left:20px;
+}
+.panel_bar .abtn {
+    background: #008ed8;
+	color: #fff;
+    padding: 4px 10px;
+    height: 24px;
+    line-height: 24px;
+    margin-right: 10px;
+}
+.panel_bar a:hover{
+	text-decoration:underline;
+}
+.panel_bar #search{
+	height:24px;
+	border:1px solid #008ED8;
+}
+
+.grid_column_text{
+	float:left;
+	}
+.grid_column_help{
+	float:left;
+	margin-top:2px;
+	margin-left:2px;
+	cursor:pointer;
+}
+</style>
+
+
+

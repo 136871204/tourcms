@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+.cm-dest-set
+{
+	table-layout:fixed;
+}
+.cm-dest-set tr{
+	line-height:25px;
+}
+.cm-dest-set td{
+	padding:2px 4px;
+}
+.cm-dest-set .dest-set-list-div
+{
+	margin-bottom:5px;
+	border-top:1px solid #eee;
+}
+.cm-dest-set .dest-set-list-div span
+{
+	margin-right:10px;
+}
+.cm-dest-set .dest-set-list-div input
+{
+	vertical-align:middle;
+	margin-right:3px;
+	cursor:pointer;
+}
+
+.cm-dest-set .td-left{
+	color:#063;
+	text-align:center;
+}
+.cm-dest-set .dest-set-selected-td input{
+	vertical-align:middle;
+}
+.cm-dest-set .dest-set-selected-td span{
+	margin-right:10px;
+}
+
+.cm-attrid-set span input{
+	vertical-align:middle;
+	cursor:pointer;
+}
+.cm-attrid-set span{
+	margin-right:6px;
+}
+.cm-attrid-set .outbox-sx-sp{
+	float:left;
+	color:#666;
+	width:90px;
+	margin:0 10px 10px 10px;
+	cursor:pointer;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis}
+.cm-attrid-set .outbox-sx-sp label{
+	cursor:pointer}
+.cm-attrid-set td{
+	padding:2px 3px;
+}
+
+.cm-theme-set{
+	padding:5px;
+}
+.cm-theme-set span{
+	margin-right:5px;
+	line-height:25px;
+}
+.cm-theme-set span input
+{
+	vertical-align:middle;
+	margin-right:2px;
+	cursor:pointer;
+}
+
+.cm-icon-set{
+	padding:5px;
+}
+.cm-icon-set span{
+	margin-right:5px;
+}

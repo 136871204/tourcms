@@ -1,0 +1,159 @@
+/*
+订单新增
+*/
+.btn_order{
+    background-color: #07C3D9;
+    border-radius: 3px;
+    width:80px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    color: #fff;
+    display:block;
+    float: left;
+    margin-left: 10px;
+
+}
+
+#sell_info_list,#sell_info_list ul {
+    float:right;
+    height: 25px;
+    line-height: 25px;
+}
+#sell_info_list ul li{
+    float: left;
+
+}
+#sell_info_list ul li span{
+    color:orange
+}
+#sellinfo a:hover{
+    color:#fff;
+
+}
+
+.pop_order_box{
+    float:left;
+    width:834px}
+.day_order_list{
+    float:left;
+    width:834px}
+.day_order_list dl{
+    float:left;
+    width:179px;
+    padding:10px;
+    margin-right:10px;
+    border:1px solid #e5e5e5;
+    border-radius:3px}
+.day_order_list dl.mr_0{
+    margin-right:0}
+.day_order_list dl dt{
+    color:#728597;
+    float:left;
+    width:179px;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    font-size:16px}
+.day_order_list dl dd{
+    float:left;
+    color:#728597;
+    width:179px;
+    height:20px;
+    padding:10px 0;
+    border-bottom:1px solid #e5e5e5}
+.day_order_list dl dd.bor_0{
+    border:0}
+.day_order_list dl dd span{
+    float:left;
+    height:20px;
+    line-height:20px;
+    text-align:center}
+.day_order_list dl dd span.same{
+    width:47px;
+    border-right:1px solid #e5e5e5}
+.day_order_list dl dd span.price{
+    width:83px}
+
+.day_order_table{
+    color:#728597;
+    float:left;
+    width:834px;
+    margin-top:10px}
+.day_order_table table{
+    border:1px solid #d9e6ec}
+.day_order_table table .year{
+    color:#008ed8;
+    font-size:16px;
+    font-weight:500}
+.day_order_table .prev,
+.day_order_table .next{
+    display:block;
+    width:12px;
+    height:18px;
+    background:url(../images/arrow-ico.png) no-repeat}
+.day_order_table .prev{
+    background-position:0 0}
+.day_order_table .next{
+    background-position:right top}
+.day_order_table .next_unvalid{
+    background-position:right bottom !important;
+}
+.derive_box{
+    float:left;
+    width:420px;
+    padding:50px;
+    }
+.derive_tit{
+    float:left;
+    color:#666;
+    width:420px;
+    height:30px;
+    line-height:30px}
+.derive_con{
+    float:left}
+.derive_con form.jqtransformdone label{
+    margin-top:2px}
+.derive_con .jqTransformInputWrapper{
+    width:100px !important;
+    height:24px;
+    line-height:24px;
+    background:none;
+    border:1px solid #e5e5e5}
+.derive_con .jqTransformInputInner{
+    background:none}
+.derive_con .jqTransformInputInner div,
+.derive_con .jqTransformInputInner div input{
+    float:left;
+    height:24px}
+.derive_con .jqTransformInputInner div input{
+    width:100%}
+.derive_arrow_rig{
+    float:left;
+    width:14px;
+    height:12px;
+    margin:7px 10px 0;
+    background:url(../images/dc-arrow-right-ico.png) left no-repeat}
+
+.derive_con .pd{
+    color:#666;
+    float:left;
+    margin:20px 30px 0 0}
+.time_text{
+    float:left}
+.now_derive_box{
+    float:left;
+    width:100%;
+    margin-top:20px}
+.now_derive_box .derive_btn{
+    display:block;
+    color:#fff;
+    width:100px;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    margin:0 auto;
+    font-size:14px;
+    text-decoration:none;
+    background:#008ed8;
+    border-radius:3px}
