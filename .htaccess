@@ -1,0 +1,22 @@
+<IFModule mod_rewrite.c>
+# 开启URL 重写功能
+RewriteEngine On
+# 请求内容不是目录
+RewriteCond %{REQUEST_FILENAME} !-d
+# 请求内容不是文件
+RewriteCond %{REQUEST_FILENAME} !-f
+# 重写URL 规则
+
+#线路部分
+#RewriteRule ^lines/show_([0-9]+)+\.html$ lines/show.php?aid=$1
+#RewriteRule ^lines/([a-z0-9]+)(/)?$ lines/search.php?dest_id=$1
+#RewriteRule ^lines/([a-z0-9]+)-([0-9]+)-([0-9]+)-([0-9]+)-([^-]+)-([0-9_]+)?$ lines/search.php?dest_id=$1&day=$2&priceid=$3&sorttype=$4&keyword=$5&attrid=$6
+#RewriteRule ^lines/([a-z0-9]+)-([0-9]+)-([0-9]+)-([0-9]+)-([^-]+)-([0-9_]+)-([0-9]+)?$ lines/search.php?dest_id=$1&day=$2&priceid=$3&sorttype=$4&keyword=$5&attrid=$6&pageno=$7
+#RewriteRule ^lines/([a-z0-9]+)-0-0-([0-9]+)-([0-9]+)-([0-9]+)-([^-]+)-([0-9]+)-([0-9_]+)?$ lines/search.php?dest_id=$1&day=$2&priceid=$3&sorttype=$4&keyword=$5&startcity=$6&attrid=$7
+#RewriteRule ^lines/([a-z0-9]+)-0-0-([0-9]+)-([0-9]+)-([0-9]+)-([^-]+)-([0-9]+)-([0-9_]+)-([0-9]+)?$ lines/search.php?dest_id=$1&day=$2&priceid=$3&sorttype=$4&keyword=$5&startcity=$6&attrid=$7&pageno=$8
+
+
+# 重写URL 规则
+RewriteRule ^(.*)$ index.php\/$1 [L]
+
+</IFModule>
