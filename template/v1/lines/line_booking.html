@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Description" content="{$zh.config.description}" />
+	<meta name="keywords" content="{$zh.config.keywords}" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<meta name="applicable-device" content="pc,mobile">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=0;" />
+	<title>标题标题</title>
+	<meta name="Description" content="描述描述" />
+	<meta name="keywords" content="关键字 关键字" />
+
+	<link rel="icon" href="__TEMPLATE__/favicon.ico" mce_href="/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="__TEMPLATE__/favicon.ico" mce_href="/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="__TEMPLATE__/common/css/import.css">
+	<link rel="stylesheet" href="__TEMPLATE__/common/css/owl.transitions.css">
+	<link rel="stylesheet" href="__TEMPLATE__/common/css/owl.carousel.css">
+	<link rel="stylesheet" href="__TEMPLATE__/common/css/owl.theme.css">
+	<link rel="stylesheet" href="__TEMPLATE__/common/css/list.css">
+	<link rel="stylesheet" href="__TEMPLATE__/common/css/mobile.css">
+    <pagejs />
+
+	<!--[if lt IE 9]>
+	<script src="__TEMPLATE__/common/scripts/html5.js"></script>
+	<script src="__TEMPLATE__/common/scripts/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body id="index">
+	<div class="loading_section"></div>
+	<!-- 头部 -->
+        <include file="__TEMPLATE__/common/inc/all_header.lbi"/>
+	<!-- //头部 -->
+	<!-- 中间内容 -->
+	<div id="content">
+		<div class="main_content">
+            <form id="dingfrm" action="?a=index&c=booking&m=index&dopost=savebooking" method="post">            
+			<div class="wrapper" style="position: relative;">
+				<!-- 路径 -->
+				<div class="path">
+					<a href="/">首页</a> &gt; <span class="stepnav">填写订单</span>
+				</div>
+				<!-- //路径 -->
+				<div class="step_area">
+					<ol class="fix">
+						<li class="on"><div><i>1</i><span>填写订单</span></div></li>
+						<li><div><i>2</i><span>确认订单</span></div></li>
+						<li><div><i>3</i><span>预订成功</span></div></li>
+					</ol>
+					<span class="line"></span>
+				</div>
+                <div class="order_area fix" style="position: relative;">
+					<div class="left_content">
+						<section class="order_block order_block_border_01">
+							<h2 class="order_ttl"><strong>产品信息</strong><span>（产品编号：{$lineinfo.lineseries}）</span></h2>
+                            <input type="hidden" name="lineseries" value="{$lineinfo.lineseries}" />
+							<div class="order_content">
+                                
+                                <input type="hidden" name="title" value="{$lineinfo.title}" />
+                                <input type="hidden" name="suitname" value="{$lineinfo.suitname}" />
+                                <input type="hidden" name="startcity" value="{$lineinfo.startcity}" />
+                                <input type="hidden" name="adultprice" value="{$lineinfo.price}" />
+                                <input type="hidden" name="childprice" value="{$lineinfo.childprice}" />
+                                <input type="hidden" name="oldprice" value="{$lineinfo.oldprice}" />
+                                
+								<table class="order_info_table">
+									<tbody>
+										<tr>
+											<th>产品名称</th>
+											<td>
+                                                <a href="{$urlroot}/lines/detail/{$lineinfo.id}.html">{$lineinfo.title}</a>
+                                            </td>
+										</tr>
+										<tr>
+											<th>产品类型</th>
+											<td>
+                                                {$lineinfo.suitname}
+                                            </td>
+										</tr>
+										<tr>
+											<th>出发日期</th>
+											<td>
+                                                <select onchange="changeday(this);" name="day">
+                                                    <list from="$day" name="d">
+                                                    <option <if value="$d.day|date:'Y-m-d',@@ == $lineinfo.usedate">selected='selected'</if> value="{$d.day|date:'Y-m-d',@@}">{$d.day|date:'Y-m-d',@@}(周{$d.day|date:'w',@@|getWeekDay})</option>
+                                                    </list>
+                                                </select>
+                                            </td>
+										</tr>
+										<tr>
+											<th>出发城市</th>
+											<td>
+                                                {$lineinfo.startcity}
+                                            </td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</section>
+						<section class="order_block">
+							<h2 class="order_ttl"><strong>预订人数</strong></h2>
+							<div class="order_content order_content_style_01">
+								<table class="order_person_table">
+									<thead>
+										<tr>
+											<th>类型</th>
+											<th>单价</th>
+											<th>购买数量</th>
+											<th>金额</th>
+										</tr>
+									</thead>
+									<tbody>
+                                        <if value="empty($lineinfo['hasadult'])">
+                                        <tr style="display: none;">
+                                        <else/>
+                                        <tr>
+                                        </if>									
+											<th>成人</th>
+											<td>&yen;{$lineinfo.price}</td>
+											<td>
+												<div class="person_machine">
+													<input class="min" type="button" value="-">
+                                                    <input type="text" data="1" class="gm_num num" id="adultnum" name="adultnum" readonly value="{$lineinfo.dingnum}" />
+													<input class="plus" type="button" value="+">
+												</div>
+											</td>
+											<td>&yen;<span class="adulttotalprice"></span></td>
+										</tr>
+                                        
+                                        <if value="empty($lineinfo['haschild'])">
+                                        <tr style="display: none;">
+                                        <else/>
+                                        <tr>
+                                        </if>									
+											<th>儿童</th>
+											<td>&yen;{$lineinfo.childprice}</td>
+											<td>
+												<div class="person_machine">
+													<input class="min" type="button" value="-">
+                                                    <input type="text" data="2" class="gm_num num" id="childnum" name="childnum" readonly value="{$lineinfo.childnum}" />
+													<input class="plus" type="button" value="+">
+												</div>
+											</td>
+											<td>&yen;<span class="childtotalprice"></span></td>
+										</tr>
+                                        
+                                        <if value="empty($lineinfo['hasold'])">
+                                        <tr style="display: none;">
+                                        <else/>
+                                        <tr>
+                                        </if>									
+											<th>婴儿</th>
+											<td>&yen;{$lineinfo.oldprice}</td>
+											<td>
+												<div class="person_machine">
+													<input class="min" type="button" value="-">
+                                                    <input type="text" data="3" class="gm_num num" id="oldnum" name="oldnum" readonly value="{$lineinfo.oldnum}" />
+													<input class="plus" type="button" value="+">
+												</div>
+											</td>
+											<td>&yen;<span class="oldtotalprice"></span></td>
+										</tr>
+                                        
+									</tbody>
+								</table>
+							</div>
+						</section>
+						<section class="order_block">
+							<h2 class="order_ttl"><strong>预订人信息</strong></h2>
+							<div class="order_content">
+								<table class="order_person_info_table table_style_01">
+									<tbody>
+										<tr>
+											<th>预订联系人<span class="tb_imp">（必填）</span><span class="tb_imp err_linkman"></span></th>
+											<th>联系手机<span class="tb_imp">（必填）</span><span class="tb_imp err_linktel"></span></th>
+										</tr>
+										<tr>
+											<td>
+                                                <input type="text" name="linkman" id="linkman" class="sex_input" value="{$lineinfo.linkman}" />
+                                                <input type="radio" name="linksex" id="male" value="1" checked><label for="male">男</label><input type="radio" name="linksex" id="female" value="2"/><label for="female">女</label></td>
+											<td>
+                                                <input type="text" class="msg_text" name="linktel" id="linktel" value="{$lineinfo.linktel}" />
+											</td>
+										</tr>
+										<tr>
+											<th>邮箱<span class="tb_imp">（必填）</span><span class="tb_imp err_linkemail"></span></th>
+											<th>处理支店<span class="tb_imp">（必填）</span><span class="tb_imp err_handleshop"></span></th>
+										</tr>
+										<tr>
+											<td>
+												<input type="text" class="msg_text" name="linkemail" id="linkemail" value="{$lineinfo.linkemail}" />
+											</td>
+											<td>
+                                                <select id="handleshop" name="handleshop" onchange="changeshop(this);">
+                                                    <if value="$lineinfo.webid==2">
+                                                    <option value="1" selected="selected">{$lineinfo.shopname}</option>
+                                                    <elseif value="$lineinfo.webid==3">
+                                                    <option value="2" selected="selected">{$lineinfo.shopname}</option>
+                                                    <else/>
+													<option value="">请选择</option>
+                                                    <foreach from="$handleshop" value="$shopD" key="$shopK" >
+                                                        <option class="handle_select" value="{$shopK}" <if value='$lineinfo.shopname == $shopD'>selected='selected'</if>>{$shopD}</option>
+                                                    </foreach>
+                                                    </if>
+                                                    <!--
+                                                    <foreach from="$handleshop" value="$shopD" key="$shopK" >
+                                                        <option class="handle_select" value="{$shopK}" <if value='$lineinfo.shopname == $shopD'>selected='selected'</if>>{$shopD}</option>
+                                                    </foreach>
+                                                    -->
+                                                </select>
+											</td>
+										</tr>
+                                        <script>/*
+                                            $(function(){
+                                                var handle_select = $(".handle_select");
+                                                var flagshow;
+                                                handle_select.hide();
+                                                handle_select.each(function(i){
+                                                    var flag = $(this).attr("selected");
+                                                    if(flag == "selected"){
+                                                        $(this).show();
+                                                        flagshow = 1;
+                                                    }
+                                                })
+                                                if( typeof(flagshow) == "undefined" ){
+                                                    handle_select.show();
+                                                }
+                                            })*/
+                                        </script>
+										<tr>
+											<th colspan="2">订单留言</th>
+										</tr>
+										<tr>
+											<td colspan="2">
+                                                <textarea class="msg_area" name="remarkinfo" cols="30" rows="10"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</section>
+                        
+                        <h3 class="order_ttl"><strong>成人游客</strong><span class="line"></span></h3>
+						<section class="order_block fix order_person_list" id="tourer1">
+							
+						</section>
+                        
+                        <h3 class="order_ttl"><strong>儿童游客（2-12周岁）</strong><span class="line"></span></h3>
+						<section class="order_block fix order_person_list" id="tourer2">
+							
+						</section>
+                        
+                        <h3 class="order_ttl"><strong>婴儿游客（2周岁以下）</strong><span class="line"></span></h3>
+						<section class="order_block fix order_person_list" id="tourer3">
+							
+						</section>
+                        
+						<div class="order_all">
+							<span class="ttl">订单金额：<strong class="price_one">￥<span class="totalprice"></span></strong></span>                            
+                            <a class="btn_03 btnsave" href="javascript:void(0);">确认订单</a>
+						</div>
+
+					</div>
+					<div class="right_content fixed_right">
+						<section class="order_detail">
+							<div class="img"><img src="__TEMPLATE__/lines/images/right_list_img_01.jpg" width="238" height="116" alt=""></div>
+							<div class="txt">
+								<p class="ttl">
+									<strong>{$lineinfo.linename}</strong>
+									<span>{$lineinfo.suitname}</span>
+								</p>
+								<table class="order_detail_table">
+									<tbody>
+                                        <if value="empty($lineinfo['hasadult'])">
+										<tr style="display: none;">
+                                        <else/>
+                                        <tr>
+                                        </if>
+											<th>成人</th>
+											<td>{$lineinfo.price} <span class="equals">X <span class="adulttotalnum">{$lineinfo.dingnum}</span></span></td>
+											<td class="adulttotalprice"></td>
+										</tr>
+                                        
+                                        <if value="empty($lineinfo['haschild'])">
+										<tr style="display: none;">
+                                        <else/>
+                                        <tr>
+                                        </if>
+											<th>儿童</th>
+											<td>{$lineinfo.childprice} <span class="equals">X <span class="childtotalnum">{$lineinfo.childnum}</span></span></td>
+											<td class="childtotalprice"></td>
+										</tr>
+                                        
+                                        <if value="empty($lineinfo['hasold'])">
+										<tr style="display: none;">
+                                        <else/>
+                                        <tr>
+                                        </if>
+											<th>婴儿</th>
+											<td>{$lineinfo.oldprice} <span class="equals">X <span class="oldtotalnum">{$lineinfo.oldnum}</span></span></td>
+											<td class="oldtotalprice"></td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="price_one">
+									订单金额：<strong>￥<span class="totalprice2"></span></strong>
+								</div>
+                                <a class="btn_03 btnsave" href="javascript:void(0);">确认订单</a>
+                                <a class="btn_03 btnsaveorder" style="display: none;" href="javascript:void(0);">立即预订</a>
+                                <div class="tj_order_btn">
+                                    <input type="hidden" id="adultprice" value="{$lineinfo.price}"/>
+                                    <input type="hidden" id="childprice" value="{$lineinfo.childprice}"/>
+                                    <input type="hidden" id="oldprice" value="{$lineinfo.oldprice}"/>
+                                    <input type="hidden" name="dingjin" value="{$lineinfo.dingjin}"/>
+                                    <input type="hidden" name="productautoid" value="{$lineinfo.id}"/>
+                                    <input type="hidden" name="productaid" value="{$lineinfo.aid}"/>
+                                    <input type="hidden" name="productname" value="{$lineinfo.title}"/>
+                                    <input type="hidden" name="suitid" id="suitid" value="{$lineinfo.suitid}"/>
+                                    <input type="hidden" name="usedate" value="{$lineinfo.usedate}"/>
+                                    <input type="hidden" name="totalprice" id="totalprice" value="" />
+                                </div>
+							</div>
+						</section>
+						<!--<p class="simple_hotline"><img src="__TEMPLATE__/common/images/ico/ico_hotline_02.png" alt="">{$lineinfo.shopname}：{$lineinfo.hotlinetel} </p>-->
+                        <div class="hotline_block">
+                           <p class="ttl"><img src="__TEMPLATE__/common/images/detail/hotline_ttl.png" width="101" height="28" alt="咨询热线"></p>
+                           <p class="support"><span>产品提供：</span><strong>{$lineinfo.shopname}</strong></p>
+                           <div class="hotline_intro">
+                            <div>
+                                <if value="$lineinfo.webid == '6'">
+                                    {$lineinfo.hotlinetel}
+                                <else/>
+                                    {$lists['histel'][$lineinfo['webid']]}
+                                </if>
+                            </div>
+                            {$handleshopjobtime}
+                           </div>
+                          </div>
+					</div>
+				</div>
+			</div>
+            </form>
+		</div>
+
+	</div>
+	<!-- //中间内容 -->
+	<!-- 底部 -->
+        <include file="__TEMPLATE__/common/inc/all_footer.lbi" />
+	<!-- //底部 -->
+
+	<script src="__TEMPLATE__/common/scripts/jsloader.js" type="text/javascript"></script>
+	<script src="__TEMPLATE__/common/scripts/placeHolder.js" type="text/javascript"></script>
+	<script src="__TEMPLATE__/common/scripts/order.js" type="text/javascript"></script>
+    <script>
+    
+        $(function(){            
+            
+            //统计价格
+            booking.countPrice();
+            //人数添加事件
+            $(".person_machine").find('.plus').click(function(){
+                var data = $(this).parents('.person_machine').find('.num').attr("data");
+                var txt = $(this).parents('.person_machine').find('.num');
+                txt.val(Number(txt.val())+1);
+                var cn = Number(txt.val());
+                if(cn>6){
+                  txt.val(6);
+                  alert('最大6位');
+                }
+                booking.countPrice();
+                booking.addTourer();
+                textclear();
+            
+                //隐藏游客信息
+                tourerhidden();
+            })
+            //人数减少事件
+             $(".person_machine").find('.min').click(function(){
+                var data = $(this).parents('.person_machine').find('.num').attr("data");
+                var txt = $(this).parents('.person_machine').find('.num');
+                var n = Number(txt.val())-1;
+                n = n<0 ? 0 : n;
+                txt.val(n);
+                booking.countPrice();
+                booking.removeTourer(data);
+            
+                //隐藏游客信息
+                tourerhidden();
+             })
+               
+            //联系人隐藏
+            /*$("#tourerlist").click(function(){
+                $("#tourer").toggle();
+            })*/
+
+            //添加联系人
+            booking.addTourer();
+            textclear();
+            
+            //隐藏游客信息
+            tourerhidden();
+            
+            //下订单
+            $(".btnsaveorder").live("click",function(){
+               var err;
+               err = FormCheck();
+               if( err == "error" ){
+                    return;
+               }
+               
+               $(".loading_section").css("display","block");
+               $.ajax({
+                    url:METH+"&dopost=savebooking",
+                    type:"post",
+                    data:$("#dingfrm").serialize(),
+                    success:function(result){
+                        //alert(result);
+                        if( result == "false" ){
+                            alert("网络繁忙，请稍后再试！");
+                        }else if( result == "true" ){
+                            window.location.href = CONTROL+"&m=success";
+                        }else{
+                            var msg = jQuery.parseJSON(result);
+                            var msgtitle='';
+                            for(var x in msg){
+                                if(msgtitle == ''){
+                                    msgtitle = x;
+                                }
+                                $(".err_"+x).html(msg[x]);
+                                setTimeout('$(".err_'+x+'").html("")',5000);
+                            }
+                            toposition("err_"+ msgtitle);
+                        }
+                        $(".loading_section").css("display","none");
+                    }
+               })
+            })
+            
+            //下订单 确认
+            $(".btnsave").click(function(){
+               var err;
+               err = FormCheck();
+               if( err == "error" ){
+                    return;
+               }
+               
+               $.ajax({
+                    url:METH+"&dopost=save",
+                    type:"post",
+                    data:$("#dingfrm").serialize(),
+                    success:function(result){
+                        $(".btnsave").hide();
+                        $(".btnsaveorder").show();
+                        //$(".confirmback").show();
+                        
+                        $(".step_area li").removeClass("on").eq(1).addClass("on");
+                        $(".stepnav").html("确认订单");
+                        
+                        $(".left_content").hide();
+                        $(".order_area").addClass("confirm_area");
+                        $(".order_area").append(result);
+                        //$(".wrapper").find("input").css("border","none");
+                        //$("#content .wrapper").find("input").attr("disabled","disabled").addClass("no_border");
+                        //$("#content .wrapper").find("select").attr("disabled","disabled");
+                        //$("#content .wrapper").find("textarea").attr("disabled","disabled").addClass("no_border");
+                        $('html,body').animate({scrollTop:0}, 0);
+                        //setTimeout('$(".loading_section").css("display","none")',200);
+                    }
+               })
+            })
+            
+            //下订单 返回
+            $(".confirmback").live("click",function(){
+
+                $(".btnsave").show();
+                $(".btnsaveorder").hide();
+                $(".step_area li").removeClass("on").eq(0).addClass("on");
+               
+                $(".stepnav").html("填写订单");
+                $(".comfirm_content").remove();
+                $(".order_area").removeClass("confirm_area");
+                $(".left_content").show();
+                
+                //$(".wrapper").find("input").removeAttr("disabled").removeClass("no_border");
+                //$(".wrapper").find("select").removeAttr("disabled");
+                //$(".wrapper").find("textarea").removeAttr("disabled").removeClass("no_border");
+                $('html,body').animate({scrollTop:0}, 0);
+            })
+           
+        });
+    
+        var booking = {
+            countPrice:function(){
+                var childnum = Number($("#childnum").val());
+                var adultnum = Number($("#adultnum").val());
+                var oldnum = Number($("#oldnum").val());
+                
+                var childprice = $("#childprice").val();
+                var adultprice = $("#adultprice").val();
+                var oldprice = $("#oldprice").val();
+                
+                childtotalprice = childnum * childprice;
+                adulttotalprice = adultnum * adultprice;
+                oldtotalprice = oldnum * oldprice;
+                totalprice = childtotalprice + adulttotalprice + oldtotalprice;
+                
+                $('.childtotalprice').html(childtotalprice);
+                $('.adulttotalprice').html(adulttotalprice);
+                $('.oldtotalprice').html(oldtotalprice);
+                
+                $('.adulttotalnum').html(adultnum);
+                $('.childtotalnum').html(childnum);
+                $('.oldtotalnum').html(oldnum);
+                //alert(totalprice);
+                $('.totalprice').html(totalprice);
+                $('.totalprice2').html(totalprice);
+                $('#totalprice').val(totalprice);
+                $('.payprice').html(totalprice);
+            },
+            addTourer:function(){
+                var childnum = Number($("#childnum").val());
+                var adultnum = Number($("#adultnum").val());
+                var oldnum = Number($("#oldnum").val());
+                var totalnum = childnum+adultnum+oldnum;
+                var $info = '';
+                for(ptype=1;ptype<=3;ptype++){
+                    switch(ptype)
+                        {
+                        case 1:
+                          var listnum = adultnum;
+                          break;
+                        case 2:
+                          var listnum = childnum;
+                          break;
+                        case 3:
+                          var listnum = oldnum;
+                          break;
+                        }
+                    var hasnum = $('#tourer'+ptype).find('.msg_list').length+1;
+                
+                    for(i=hasnum;i<=listnum;i++){
+                        $info = '<div class="one_person_order msg_list">';
+                        if(ptype=="1"){
+                            $info +='   <h2 class="order_ttl"><strong>成人'+i+'</strong></h2>';
+                        }else if(ptype=="2"){
+                            $info +='   <h2 class="order_ttl"><strong>儿童'+i+'</strong></h2>';
+                        }else if(ptype=="3"){
+                            $info +='   <h2 class="order_ttl"><strong>婴儿'+i+'</strong></h2>';
+                        }                        
+                        $info +='   <div class="order_content">';
+                        $info +='       <table class="table_style_01">';
+                        $info +='       <tbody>';
+                        $info +='           <tr><th>姓名<span class="tb_imp">（必填）</span><span class="tb_imp err_tourername'+ptype+i+'"></span></th></tr>';
+                        $info +='           <tr><td>';
+                        $info +='                   <input class="sex_input" type="text" name="tourername'+ptype+i+'" id="tourname'+ptype+i+'">';
+                        $info +='                   <input type="radio" name="tourersex'+ptype+i+'" id="male'+ptype+i+'" value="1" checked><label for="male'+ptype+i+'">男</label>';
+                        $info +='                   <input type="radio" name="tourersex'+ptype+i+'" id="female'+ptype+i+'" value="2"><label for="female'+ptype+i+'">女</label>';
+                        $info +='           </td></tr>';
+                        $info +='           <tr><th>姓名拼音<span class="tb_imp">（必填）</span><span class="tb_imp err_pinyin'+ptype+i+'"></span></th></tr>';
+                        $info +='           <tr><td>';
+                        $info +='                   <input class="pinyin_input fname_pinyin" type="text" name="tourerfnamealp'+ptype+i+'" id="tourerfnamealp'+ptype+i+'" style="margin-right:65px;">';
+                        $info +='                   <input class="pinyin_input lname_pinyin" type="text" name="tourerlnamealp'+ptype+i+'" id="tourerlnamealp'+ptype+i+'">';
+                        $info +='           </td></tr>';
+                        $info +='           <tr><th>出生日期</th></tr>';
+                        $info +='           <tr><td>';
+                        $info +='                   <input class="date_input date_yy" type="text" name="tourerbirthdayy'+ptype+i+'" id="tourerbirthdayy'+ptype+i+'" style="margin-right: 46px;">';
+                        $info +='                   <input class="date_input date_mm" type="text" name="tourerbirthdaym'+ptype+i+'" id="tourerbirthdaym'+ptype+i+'" style="margin-right: 46px;">';
+                        $info +='                   <input class="date_input date_dd" type="text" name="tourerbirthdayd'+ptype+i+'" id="tourerbirthdayd'+ptype+i+'">';
+                        $info +='           </td></tr>';
+                        //if(ptype == '1'){
+                            $info +='           <tr><th>护照号</th></tr>';
+                            $info +='           <tr><td><input type="text" name="tourerpassbook'+ptype+i+'" class="text_msg tourname" id="tourerpassbook'+ptype+i+'" /></td></tr>';
+                            $info +='           <tr><th>护照有效期</th></tr>';
+                            $info +='           <tr><td>';
+                            $info +='                   <input class="date_input date_yy" type="text" name="tourereffectivey'+ptype+i+'" id="tourereffectivey'+ptype+i+'" style="margin-right: 46px;">';
+                            $info +='                   <input class="date_input date_mm" type="text" name="tourereffectivem'+ptype+i+'" id="tourereffectivem'+ptype+i+'" style="margin-right: 46px;">';
+                            $info +='                   <input class="date_input date_dd" type="text" name="tourereffectived'+ptype+i+'" id="tourereffectived'+ptype+i+'">';
+                            $info +='           </td></tr>';
+                        //}
+                        
+                        $info +='       </tbody>';                    
+                        $info +='       </table>'
+                        $info +='   </div>';
+                        $info +='<input type="hidden" name="tourerptype'+ptype+i+'" value="'+ptype+'">';
+                        $info +='</div>';
+                        $("#tourer"+ptype).append($info);
+                    }
+                }
+            },
+            removeTourer:function(data){
+                $('#tourer'+data).find('.msg_list').last().remove();
+            }
+        }
+        
+        //更改日期
+        function changeday(ob){
+            var lineid = {$lineinfo.id};
+            var suitid = {$lineinfo.suitid};
+            var usedate = $(ob).val();
+            var adultnum = {$lineinfo.dingnum};
+        	var childnum = {$lineinfo.childnum};
+            var oldnum = {$lineinfo.oldnum};
+            
+            window.location.href = WEB+"?a=index&c=booking&m=index&lineid="+lineid+"&suitid="+suitid+"&usedate="+usedate+"&oldnum="+oldnum+"&adultnum="+adultnum+"&childnum="+childnum;
+        }
+        
+        //更改支店以及时间
+        function changeshop(ob){
+            var shopid = $(ob).val();
+            
+            switch(shopid){
+                case "1":
+                    var newshopname = "上海支店";
+                    var newjobtime = "<table><tbody><tr><th>周一至周六：</th><td>09:30~18:00</td></tr></tbody></table>";
+                    var tel="021-3331-2136";
+                    break;
+                case "2":
+                    var newshopname = "北京总部";
+                    var newjobtime = "<table><tbody><tr><th>周一至周五：</th><td>09:00~18:00</td></tr></tbody></table>";
+                    var tel="010-6539-1864";
+                    break;
+                case "3":
+                    var newshopname = "成都支店";
+                    var newjobtime = "<table><tbody><tr><th>周一至周五：</th><td>09:00~18:00</td></tr></tbody></table>";
+                    var tel="028-8620-3718";
+                    break;
+                case "4":
+                    var newshopname = "广州支店";
+                    var newjobtime = "<table><tbody><tr><th>周一至周五：</th><td>09:30~18:30</td></tr><tr><th>周六：</th><td>09:30~15:30</td></tr></tbody></table>";
+                    var tel="020-3877-3580";
+                    break;
+                case "5":
+                    var newshopname = "青岛支店";
+                    var newjobtime = "<table><tbody><tr><th>周一至周五：</th><td>09:00~18:00</td></tr><tr><th>周六：</th><td>10:00~16:00</td></tr></tbody></table>";
+                    var tel="0532-66777288";
+                    break;
+                case "6":
+                    var newshopname = "大连支店";
+                    var newjobtime = "<table><tbody><tr><th>周一至周五：</th><td>09:00~18:00</td></tr><tr><th>周六：</th><td>10:00~16:00</td></tr></tbody></table>";
+                    var tel="0411-3980-5766";
+                    break;
+                case "7":
+                    var newshopname = "苏州支店";
+                    var newjobtime = "<table><tbody><tr><th>周一至周五：</th><td>09:30~17:30</td></tr></tbody></table>";
+                    var tel="";
+                    break;
+                default:
+                    var newshopname = "{$lineinfo.shopname}";
+                    var newjobtime = "{$handleshopjobtime}";
+                    var tel="{$lineinfo.hotlinetel}";
+                    break;                
+            }
+            var out = "<div>"+tel+"</div>"+newjobtime;
+            $(".support strong").html(newshopname);
+            //$(".hotline_intro table").html(newjobtime);
+            $(".hotline_intro").html(out);
+        }
+        
+        function tourerhidden(){
+            for(i=1;i<=3;i++){
+                var num = $("#tourer" + i +" .one_person_order").length;
+                if( num < 1){
+                    $("#tourer"+i).prev("h3").hide();
+                }else{
+                    $("#tourer"+i).prev("h3").show();
+                }
+            }            
+        }
+    
+    </script>
+    
+    <script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2ad08b63ae0f1d236b9be590b7f72063' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</body>
+</html>

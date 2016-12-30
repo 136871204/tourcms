@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Description" content="H.I.S.旅游网为您提供日本旅游线路,日本旅游景点,日本自由行,日本跟团游,日本半自助游,日本团队游等多种价格查询。" />
+	<meta name="keywords" content="东京,冲绳,大阪,北海道" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<meta name="applicable-device" content="pc,mobile">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=0;" />
+	<title>标题标题</title>
+	<meta name="Description" content="描述描述" />
+	<meta name="keywords" content="关键字 关键字" />
+	
+	<link rel="icon" href="__TEMPLATE__/favicon.ico" mce_href="/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="__TEMPLATE__/favicon.ico" mce_href="/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="__TEMPLATE__/common/css/import.css">
+	<link rel="stylesheet" href="__TEMPLATE__/common/css/list.css">
+	<link rel="stylesheet" href="__TEMPLATE__/common/css/mobile.css">
+    <pagejs />
+	<!--[if lt IE 9]>
+	<script src="__TEMPLATE__/common/scripts/html5.js"></script>
+	<script src="__TEMPLATE__/common/scripts/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body id="search">
+	<!-- 头部 -->
+		<!--#include virtual="/common/inc/header.lbi"-->
+        <include file="__TEMPLATE__/common/inc/all_header.lbi" />
+	<!-- //头部 -->
+	<!-- 中间内容 -->
+	<div id="content">
+		
+			<div class="main_content">
+				<div class="wrapper fix">
+					<!-- 路径 -->
+						<div class="path">
+							<a href="/">首页</a> &gt; <span>搜索</span>
+						</div>
+						<!-- //路径 -->
+					<!-- 左边 -->
+					<aside class="search_left">
+						<div class="search_left_content">
+							<dl>
+								<dt>
+									搜索结果
+								</dt>
+								<dd>
+									<ul>
+										<li>全部结果<span>（{$count}）</span></li>
+									</ul>
+								</dd>
+							</dl>
+						</div>
+					</aside>
+					<!-- //左边 -->
+					<!-- 右边 -->
+					<div class="search_right">
+						<div class="search_right_content">
+                            <form action="__ROOT__{$urlroot}/index.php" method="get" id="searchForm">
+                                <input type="hidden" name="a" value="Index"/>
+                                <input type="hidden" name="m" value="coloudsearch"/>
+                                <input type="hidden" name="c" value="Search"/>
+    							<div class="search_input">
+    								<input class="text" type="text" name="keyword" value="{$keyword}"/>
+    								<input class="button" type="button" value="" onclick="btn_search('searchForm')"/>
+    							</div>
+                            </form>
+							<!-- 列表内容 -->
+                            <if value="$resultlines|count!='0'">
+							<div class="travel_list">
+                                <foreach from="$resultlines" value="$lineD" >
+								<div class="travel_one">
+									<div class="img">
+                                    <if value="empty($lineD['linepic']) ">
+                                        <img src="__TEMPLATE__/common/images/210x118_default.jpg" width="210" height="118" alt=""/>
+                                    <else/>
+                                        <img src="__ROOT__/{$lineD.linepic}" width="210" height="118" alt=""/>
+                                    </if>
+									</div>
+									<div class="content">
+										<div class="intro">
+											<div class="main_intro">
+                                                <if value="!empty($lineD.holiday)">
+												<span class="holiday">[{$lineD.holiday}]</span>
+                                                </if>
+												<strong class="li_title"><a href="{$urlroot}/lines/detail/{$lineD.id}.html">{$lineD.linename}</a></strong>
+                                                <if value="$lineD.iconshow!=''">
+												<ul class="fix">
+                                                    {$lineD.iconshow}
+												</ul>
+                                                </if>
+											</div>
+											<p class="date_intro"><span class="green">{$lineD.startcity}</span> 出团日期：{$lineD.maxmindateshow}</p>
+											<p class="sec_intro"><strong>特色：</strong>{$lineD.sellpoint}</p>
+                                            <if value="$lineD.magrecommend">
+                                            <div class="tag_intro">
+												<ul class="fix t_tag_list">
+													{$lineD.magrecommendHtml}
+												</ul>
+											</div>
+                                            </if>
+										</div>
+										<div class="price">
+											{$lineD.price}
+											<a class="btn_02" href="{$urlroot}/lines/detail/{$lineD.id}.html">查看详情</a>
+										</div>
+									</div>
+								</div>
+                                </foreach>
+							</div>
+							<!-- //列表内容 -->
+							<!-- 分页 -->
+							<div class="page fix">
+								{$page}
+							</div>
+							<!-- //分页 -->
+                        <else />
+                        <div class="no_result">非常抱歉，暂时没有开通<span style="color:red;">{$keyword}</span>相关的旅游线路！</div>
+                        </if>
+						</div>
+					</div>
+					<!-- //右边 -->
+				</div>
+			</div>
+
+	</div>
+	<!-- //中间内容 -->
+	<!-- 底部 -->
+        <include file="__TEMPLATE__/common/inc/all_footer.lbi" />
+	<!-- //底部 -->
+
+	<script src="__TEMPLATE__/common/scripts/jsloader.js" type="text/javascript"></script>
+	<script src="__TEMPLATE__/common/scripts/list.js" type="text/javascript"></script>
+	<script src="__TEMPLATE__/common/scripts/jquery.blockLink.js" type="text/javascript"></script>
+	<script>
+		$(function(){
+		  
+		    //js加link
+            $('.travel_list > div.travel_one').blockLink();
+            
+			navBannerOn(1);
+		});
+	</script>
+	<script>
+	$(function(){
+	     $(".li_title a").each(function(index, element) {
+   
+        	     var words={$words|json_encode:@@};
+        		 var text=$(element).text();
+        		 for(var i in words)
+        		 {
+        			 text=text.replace(words[i],"<font color='red'>"+words[i]+"</font>");
+        		 }
+        		 
+        		 $(element).html(text);
+        		 
+        		 
+        	   
+        });
+	});
+</script>
+</body>
+</html>

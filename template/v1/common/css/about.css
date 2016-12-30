@@ -1,0 +1,79 @@
+/* 联系我们 */
+.about_left{float: left;width: 190px;}
+.about_left ul li a{display: block;padding-left: 30px;height: 50px;line-height: 50px;background: #fff;border-bottom: 1px solid #f2f2f2;color: #a1a8b3;font-size: 16px;}
+.about_left ul li.on a{border-left: 1px solid #3580e8;background: #f8fafb;color: #737880;}
+.about_right{float: right;width: 990px;background: #fff;}
+.about_right .about_right_content{padding: 30px;}
+.about_right .about_right_content .about_ttl{margin-bottom: 20px;font-size: 26px;font-weight: normal;color: #3c3e42;}
+.about_right .about_right_content .about_txt{line-height: 20px;font-size: 14px;color: #737880;}
+.about_contact_content{margin-right: -30px;}
+.about_contact_content section{float: left;display: inline;margin: 0 30px 30px 0;padding: 16px;width: 448px;background: #f8fafb;border: 1px solid #d6dbe4;}
+.about_contact_content section h3{margin: 0 0 10px 0;color: #a1a8b3;font-size: 16px;font-weight: normal;}
+.about_contact_content section h3 strong{margin: 0 5px 0 0;color: #737880;font-size: 22px;font-weight: normal;}
+.about_contact_content section .about_contact_detail{margin-left: 14px;}
+.about_contact_content section .about_contact_detail ul li{margin-bottom: 10px;padding-left: 25px;color: #a1a8b3;font-size: 14px;}
+.about_contact_content section .about_contact_detail ul li a{color: #a1a8b3;font-size: 14px;}
+.about_contact_content section .about_contact_detail ul li.address{background: url("../images/about/ico_pos.png") no-repeat scroll left 1px;}
+.about_contact_content section .about_contact_detail ul li.address .go_map{display: block;margin-left: 5px;color: #3580e8;}
+.about_contact_content section .about_contact_detail ul li.phone{background: url("../images/about/ico_phone.png") no-repeat scroll left center;}
+.about_contact_content section .about_contact_detail ul li.mail{background: url("../images/about/ico_mail.png") no-repeat scroll left center;}
+.about_contact_content section .about_contact_detail ul li.mail a:hover{color: #3580e8;}
+.about_contact_content section .about_contact_detail ul li.qq{background: url("../images/about/ico_qq.png") no-repeat scroll 1px center;}
+.about_contact_content section .about_contact_detail ul li.qq span{margin-right: 10px;}
+.about_contact_content section .about_contact_detail ul li.qq a{margin-right: 10px;}
+.about_contact_content section .about_contact_detail ul li.qq a:hover{color: #3580e8;}
+.about_contact_content section .about_contact_detail ul li.time{background: url("../images/about/ico_clock.png") no-repeat scroll 1px center;}
+.about_contact_content section .img{font-size: 0; margin-left:14px;}
+
+/* //联系我们 */
+/* 法律 */
+
+/* //法律 */
+
+/* 公司介绍 */
+.company_intro{padding:0 28px;background: #f0f2f4;}
+.company_intro .ci_left{padding: 56px 0;float: left;width: 138px;border-right: 2px solid #e9ecef;}
+.company_intro .ci_left ul li{margin-bottom: 19px;line-height: 45px;color: #737880;font-size: 14px;}
+.company_intro .ci_right{padding: 56px 0;float: left;width: 736px;}
+.company_intro .ci_right ul li{position: relative;left: -12px;margin-bottom: 19px;padding-left: 44px;background: url("../images/about/ico_ball.png") no-repeat scroll left center;}
+.company_intro .ci_right ul li span{display: block;padding-left: 20px;background: #fff;height: 45px;border-bottom: 1px solid #dedfe1;line-height: 45px;color: #737880;font-size: 14px;}
+/* //公司介绍 */
+
+
+/* jr_pass */
+.jr_ttl{font-size: 0;}
+.jr_nav{top: 0;margin: 10px 0;}
+.jr_nav ul{margin-right: -20px;}
+.jr_nav ul li{float: left;display: inline;margin-right: 20px;zoom: 1;}
+.jr_nav ul li a{display: block;padding: 0 24px;height: 32px;line-height: 32px;background: #f0f2f4;border: 1px solid #a0a8b4;-webkit-border-radius: 10px;border-radius: 10px;behavior: url(/common/scripts/PIE.htc);color: #737880;font-size: 14px;text-align: center;}
+.jr_nav ul li a:hover,
+.jr_nav ul li.on a{background: #57a0ce;border: 1px solid #57a0ce;color: #fff;}
+.jr_cate_one{padding: 20px;background: #fff;overflow: hidden;}
+/*.jr_cate_one table{width: 100%;}
+.jr_cate_one table thead th{padding: 0 0 20px 0;border-bottom: 1px solid #cbd3dd;font-size: 20px;color: #67c5ff;text-align: left;vertical-align: middle;}
+.jr_cate_one table thead td{padding: 0 0 20px 0;border-bottom: 1px solid #cbd3dd;font-size: 14px;color: #3c3e42;text-align: center;vertical-align: middle;font-weight: bold;}
+.jr_cate_one table tbody th{padding-top: 20px;width: 320px;font-size: 0;vertical-align: top;}
+.jr_cate_one table tbody td{padding: 10px 0;width: 210px;font-size: 14px;color: #737880;text-align: center;vertical-align: middle;}
+.jr_cate_one table .bdb_line{border-bottom: 1px solid #cbd3dd;}*/
+.jr_cate_one .jr_one_left{float: left;width: 320px;}
+.jr_cate_one .jr_one_left h2{margin-bottom: 20px;border-bottom: 1px solid #cbd3dd;color: #67c5ff;font-size: 20px;line-height: 28px;padding: 0 0 20px;}
+.jr_cate_one .jr_one_right{float: right;width: 840px;}
+.jr_cate_one .jr_one_right table{width: 100%;}
+.jr_cate_one .jr_one_right table thead th{border-bottom: 1px solid #cbd3dd;line-height: 28px;color: #3c3e42;font-size: 14px;font-weight: bold;padding: 0 0 20px 0;text-align: center;vertical-align: middle;}
+.jr_cate_one .jr_one_right table tbody td{color: #737880;font-size: 14px;padding: 10px 0;text-align: center;vertical-align: middle;width: 210px;}
+.jr_cate_one .jr_one_right table .bdb_line{border-bottom: 1px solid #cbd3dd;}
+
+.jr_pass_hint{color:red;font-size:18px; text-align: right; margin-top:10px;}
+/* //jr_pass */
+/* jr_wifi */
+#jp_wifi .jr_cate_one .jr_one_right table tbody th{color: #a1a8b3;font-size: 14px;padding: 10px 0;text-align: right;vertical-align: middle;width: 80px;padding-right: 60px;}
+#jp_wifi .jr_cate_one .jr_one_right table tbody td{text-align: left;}
+/* //jr_wifi */
+/* jr_visa */
+#jp_visa .jr_cate_one .jr_one_right table tbody th{color: #a1a8b3;font-size: 14px;padding: 10px 0;text-align: right;vertical-align: middle;width: 100px;padding-right: 60px;}
+#jp_visa .jr_cate_one .jr_one_right table tbody td{text-align: left;}
+#jp_visa .jr_cate_one .jr_one_left{float: none;width: 100%;}
+#jp_visa .jr_cate_one .jr_one_left h2{line-height: 19px;}
+#jp_visa .jr_cate_one .jr_one_right{float: none;width: 100%;}
+
+/* //jr_visa */

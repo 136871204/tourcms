@@ -1,0 +1,20 @@
+<if value="$webid eq 1">
+    <include file="__TEMPLATE__/common/inc/1_footer.lbi"/>
+<elseif value="$webid eq 2"> 
+    <include file="__TEMPLATE__/common/inc/2_footer.lbi"/>
+<elseif value="$webid eq 3"> 
+    <include file="__TEMPLATE__/common/inc/3_footer.lbi"/>
+<elseif value="$webid eq 6"> 
+    <include file="__TEMPLATE__/common/inc/6_footer.lbi"/>  
+</if>
+
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?2ad08b63ae0f1d236b9be590b7f72063";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>

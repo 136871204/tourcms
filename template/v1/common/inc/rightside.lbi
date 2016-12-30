@@ -1,0 +1,42 @@
+<if value="$rightBanner1|count !='0' || $rightBanner2|count !='0'">
+<dl class="aside_adv">
+
+
+    <foreach from="$rightBanner2" value="$rb2" >
+        <dd>
+        <if value="{$rb2.url}">
+            <if value="$rb2['new_window'] eq 1 ">
+                <a target="_blank" href="{$rb2.url}">
+            <else>
+                <a href="{$rb2.url}">
+            </if>
+            <img src="__ROOT__/{$rb2.main_image}" width="240" alt=""/></a>
+        <else/>
+         	<img src="__ROOT__/{$rb2.main_image}" width="240" alt=""/>
+        </if>
+        </dd>
+    </foreach>
+</dl>
+</if>
+
+<if value="$rightBanner3|count !='0'">
+<dl class="aside_adv">
+	<dt>
+		<span>HIS提供的链接</span>
+	</dt>
+    <foreach from="$rightBanner3" value="$rb3" >
+        <dd>
+        <if value="{$rb3.url}">
+            <if value="$rb3['new_window'] eq 1 ">
+                <a target="_blank" href="{$rb3.url}">
+            <else>
+                <a href="{$rb3.url}">
+            </if>
+            <img src="__ROOT__/{$rb3.main_image}" width="240" alt=""/></a>
+        <else/>
+        	<img src="__ROOT__/{$rb3.main_image}" width="240" alt=""/>
+        </if>
+        </dd>
+    </foreach>
+</dl>
+</if>

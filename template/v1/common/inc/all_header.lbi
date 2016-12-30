@@ -1,0 +1,9 @@
+<if value="$webid eq 1">
+    <include file="__TEMPLATE__/common/inc/1_header.lbi"/>
+<elseif value="$webid eq 2"> 
+    <include file="__TEMPLATE__/common/inc/2_header.lbi"/>
+<elseif value="$webid eq 3"> 
+    <include file="__TEMPLATE__/common/inc/3_header.lbi"/>
+<elseif value="$webid eq 6"> 
+    <include file="__TEMPLATE__/common/inc/6_header.lbi"/>
+</if>

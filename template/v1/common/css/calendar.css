@@ -1,0 +1,99 @@
+/***Calender***/
+table { border-collapse: collapse; border-spacing: 0; }
+
+.calendar{border-collapse:collapse;border:3px solid #E7E7E7;border:1px solid green}
+/*.calendar tr td{padding:1px}*/
+
+.calendar-title{height:25px;background:#f2f7fd;}
+
+.calendar-title-current-month{color:#01aec8;font-weight:500; font-family:"微软雅黑"; font-size:18px}
+
+.calendar-weeks{height:24px;background:#fafff1;}
+
+.calendar-week-days{height:45px;}
+
+.calendar td{text-align:center;border:1px solid #d8ecf7;width:auto;height:30px;vertical-align:middle;}
+
+.calendar td div{font-family:Simsun;font-weight:400;line-height:20px;overflow:hidden;text-align:right;width:62px;padding:2px 5px 0 0;}
+
+.calendar span.v-holiday{font-size:12px;font-weight:400;color:#555;text-align:right;float:none;}
+
+.calendar-today{color:red;}
+
+.calendar a{text-decoration:none;cursor:pointer;}
+
+.calendar_red{color: #F60;font-size: 12px;font-weight:500; font-family:"微软雅黑"}
+
+.calendar_bg_ffffcc{background:#ffc;height:46px;}
+
+.calendar_padding_top_8{padding-top:8px;}
+
+.calendar_padding_top_5{padding-top:5px;}
+
+.calendar_color_333{color:#333;}
+
+.calendar_color_ff6600{color:#f60;}
+
+.calendar_jieri{color:#4876FF;}
+
+.calendar-tag,.calendar div{color:Red;font-size:12px;}
+
+.calendar td b{
+	color:#888}
+
+.calendar-weeks td{background:#cfebff;font-weight:bold;color:#01aec8; font-size:13px}
+
+.calendar td div{color:#555}
+
+#subPrev{background:url(../images/subPrev.gif) no-repeat 0 0;width:68px;height:30px;float:left;}
+
+#subNext{background:url(../images/subNext.gif) no-repeat 0 0;width:68px;height:30px;float:left;}
+
+#dv_01{width:500px;display:none;background-color:#FFF;position:absolute;float:left;}
+
+#calenderPartEven
+
+{
+
+	width: 928px;
+
+	overflow: hidden;
+
+	z-index:999;
+
+	 height:360px;
+
+}
+
+#calenderPartEven .closeui{ height:25px; line-height:25px; text-align:right; float:left; clear:both; width:928px;}
+
+#calenderPartEven .closeui span{ display:block; margin-right:10px; text-align:right; cursor:pointer; width:50px; float:right}
+
+.calendar
+
+{
+
+    width: 49%;
+	border: 1px solid #D8ECF7;
+
+}
+
+.calendar td
+
+{
+
+	background:#fff;
+
+}
+
+.calendar td div
+
+{
+
+	width: 61px;
+
+}
+.tablelist{
+    clear: both;
+    overflow: hidden;
+}

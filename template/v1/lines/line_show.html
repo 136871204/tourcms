@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Description" content="{$seoinfo.description}" />
+	<meta name="keywords" content="{$seoinfo.keyword}" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<meta name="applicable-device" content="pc,mobile">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=0;" />
+	<title>{$seoinfo.title}</title>
+    <pagejs/>
+
+    <link rel="icon" href="__TEMPLATE__/favicon.ico" mce_href="/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="__TEMPLATE__/favicon.ico" mce_href="/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="__TEMPLATE__/common/css/import.css">
+	
+	<link rel="stylesheet" href="__TEMPLATE__/common/css/jquery.ad-gallery.css">
+	
+    <link rel="stylesheet" href="__TEMPLATE__/common/css/owl.transitions.css">
+    <link rel="stylesheet" href="__TEMPLATE__/common/css/owl.carousel.css">
+    <link rel="stylesheet" href="__TEMPLATE__/common/css/owl.theme.css">
+    <link href="__TEMPLATE__/common/css/calendar.css?v=2014.01" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="__TEMPLATE__/common/css/list.css">
+    <link rel="stylesheet" href="__TEMPLATE__/common/css/mobile.css">
+	<!--[if lt IE 9]>
+	<script src="__TEMPLATE__/common/scripts/html5.js"></script>
+	<script src="__TEMPLATE__/common/scripts/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body id="japan_travel">
+	<!-- 头部 -->
+		<!--#include virtual="/common/inc/header.lbi"-->
+        <include file="__TEMPLATE__/common/inc/all_header.lbi" />
+	<!-- //头部 -->
+	<!-- 中间内容 -->
+	<div id="content">
+
+			<div class="main_content">
+				<div class="wrapper fix" style="position: relative;">
+						<!-- 路径 -->
+						<div class="path">
+							<a href="/">首页</a> <span>{$pkname}</span> &gt; <a href="">{$lineinfo.linename}</a>
+						</div>
+						<!-- //路径 -->
+					<!-- 详细页面左侧 -->
+					<div class="detail_left_content">
+
+						<div id="mobile_detail_kv">
+							
+							<ul class="fix tag">
+								{$lineinfo.iconshow}
+							</ul>
+							<div id="md_kv" class="md_kv">
+								{$lineinfo.photoHtml_mb}
+							</div>
+						</div>
+
+						<section class="travel_detail_sectiion">
+							<h2 class="travel_name">
+                                <if value="$lineinfo.holiday!=''">
+								<span class="holiday">[{$lineinfo.holiday}]</span>
+                                </if>
+								<span>{$lineinfo.linename}</span>
+							</h2>
+							<p class="remark">
+								<span class="number">编号{$lineinfo.linesn}：</span>
+								<span> [{$lineinfo.shopname}] 提供相关服务</span>
+							</p>
+							<div class="fix">
+								<div class="travel_detail_price">
+									<div class="td_price_area">
+                                        <if value="$lineinfo.storeprice!='0'">
+										<p class="tdp_area_price">
+											<span class="price_txt_01">市场价：</span>
+											<del class="price_txt_02">¥{$lineinfo.storeprice}起</del>
+										</p>
+                                        </if>
+										<div class="tdp_area_price_now">
+											<span class="price_txt_01">H.I.S. 价：</span>
+											{$lineinfo.price}
+                                            <if value="$lineinfo['lineprice']">
+                                                <if value=" $lineinfo['baf'] eq 0 " >
+                                                <span class="price_set_intro">包含燃油费</span>
+                                                <elseif value=" $lineinfo['baf'] eq 1 "/>
+                                                <span class="price_set_intro">不含燃油费</span>
+                                                </if>
+                                            </if>
+											
+										</div>
+									</div>
+									<div class="td_price_detail">
+										<div class="mb5">
+											<ul class="fix">
+												<li>
+													<span class="price_txt_01">出发地：</span>
+													<span class="price_txt_02">{$lineinfo.startcity}</span>
+												</li>
+												<li>
+													<span class="price_txt_01">出团日期：</span>
+													<span class="price_txt_02">{$lineinfo.maxmindateshow}</span>
+												</li>
+												<li>
+													<span class="price_txt_01">最少成团人数：</span>
+													<span class="price_txt_02">{$lineinfo.corporationnum}人</span>
+												</li>
+											</ul>
+										</div>
+										<div class="mb5">
+											<ul class="fix">
+                                                <if value="$lineinfo.transport!=''">
+												<li>
+													<span class="price_txt_01">往返交通：</span>
+													<span class="price_txt_02">{$lineinfo.transport}</span>
+												</li>
+                                                </if>
+												<li>
+													<span class="price_txt_01">提前天数：</span>
+													<span class="price_txt_02">{$lineinfo.linebefore}天</span>
+                                                    <input type="hidden" id="pagelinebefore" value="<?php echo $lineinfo['linebefore']; ?>" />
+												</li>
+											</ul>
+										</div>
+                                        <if value="$lineinfo.sellpoint!=''">
+										<p class="mb5">
+											<span class="price_txt_01">特色：</span>
+											<span class="price_txt_02">{$lineinfo.sellpoint}</span>
+										</p>
+                                        </if>
+									</div>
+                                    <if value="$lineinfo.magrecommend">
+                                    <div class="mb10">
+										<ul class="fix t_tag_list">
+											{$lineinfo.magrecommendHtml}
+										</ul>
+                                    </div>
+                                    </if>
+                                    <if value="$lineinfo.shotcontent">
+									<div class="td_price_spec fix">
+										<span class="manager_rec">产品推荐</span>
+									</div>
+									<div class="td_price_tag">
+                                        {$lineinfo.shotcontent|html_entity_decode:@@|nl2br:@@}
+									</div>
+                                    </if>
+								</div>
+								<!-- 左边小轮播部分 -->
+								<div class="ad-gallery">
+                                    <if value="$lineinfo.iconshow!=''">
+									<ul class="fix tag">
+                                        {$lineinfo.iconshow}
+									</ul>
+                                    </if>
+									<div class="ad-image-wrapper">
+									</div>
+									<div class="ad-controls">
+									</div>
+									<div class="ad-nav">
+										<div class="ad-thumbs">
+											<ul class="ad-thumb-list">                                            
+                                                {$lineinfo.photoHtml}												
+											</ul>
+										</div>
+									</div>
+								</div>
+								<!-- //左边小轮播部分 -->
+							</div>
+							
+						</section>
+						<!-- 预订选择部分 -->
+                        <if value="$lineinfo.lineprice">
+						<section class="booking_area">
+                            <if value="$lineinfo.expire<time()">
+                            此产品已经过期
+                            <div class="mb10 fix" style="display: none;">
+                            <else/>
+                            <div class="mb10 fix">
+                            </if>
+								<div class="booking_combo_change">
+									<span>价格套餐</span>
+									<ul class="price_combo fix tc_class">
+                                        <foreach from="$linesuit" value="$suit" >
+                                            <li><a href="javascript:;" data-suitid="{$suit.id}">{$suit.suitname}</a></li>
+                                        </foreach>
+									</ul>
+								</div>
+								<div class="booking_price">
+									<strong class="price_one" style="display: none;">总价：¥ <span class="totalprice"></span>起</strong>
+								</div>
+							</div>
+							<div class="fix">
+								<div class="booking_select">
+									<div class="bks_one">
+										<span>出发日期</span>
+										<select class="bks_one_price" name="st_select" id="date_list" onchange="changePrice();">
+											<!-- <option value="">2015-10-15(周四)成人价 1600儿童价 1300婴儿价 1200家庭价</option> -->
+										</select>
+									</div>
+									<div class="bks_one" id="adultcontain">
+										<span>成人</span>
+        								<select name="adultnum" id="adultnum" onchange="changePrice2();">
+                                            <option value="0">0</option>
+        									<option value="1" selected="selected">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+        								</select>
+									</div>
+									<div class="bks_one" id="childcontain">
+										<span>儿童</span>
+        								<select name="childnum" id="childnum" onchange="changePrice2();">
+                                            <option value="0">0</option>
+        									<option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+        								</select>
+									</div>
+									<div class="bks_one" id="oldcontain">
+										<span>婴儿</span>
+        								<select name="oldnum" id="oldnum" onchange="changePrice2();">
+                                            <option value="0">0</option>
+        									<option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+        								</select>
+									</div>
+									<div class="intro">
+										<a href="javascript:void(0);">说明</a>
+										<div class="intro_content">
+											<div class="up_arrow"></div>
+											<div class="intro_detail">
+												<dl>
+													<dt>儿童价标准：</dt>
+													<dd>年龄2~12周岁（不含），不占床，服务标准同成人</dd>
+													<dt>婴儿价标准：</dt>
+													<dd>年龄2周岁以下（不含），不占床，服务标准同成人 </dd>
+												</dl>
+											</div>
+										</div>
+									</div>									
+								</div>
+								<a href="#" class="btn_03 firstorder" style="display: none;">立即预订</a>   
+								
+							</div>
+						</section>
+                        </if>
+                        <?php 
+                         //if(IN_ADMIN){
+                            ?> 
+                            <!-- 日历部分 -->
+						<section class="calendar_intro fix">
+							<div class="ci_block">
+								<div class="ci_block_arrow"></div>
+								<div class="content">
+									<dl class="fix">
+										<dt>友情提示：</dt>
+										<dd>
+											<ul class="fix">
+												<li><img src="__TEMPLATE__/common/images/detail/ico_rest.png" alt=""><span>余位充足</span></li>
+												<li><img src="__TEMPLATE__/common/images/detail/ico_phone.png" alt=""><span>电话咨询</span></li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+							</div>
+							<div class="ci_txt">预订是以客服人员及时与您联系并完成订单为准，操作时可能出现满位情况敬请谅解。</div>
+						</section>
+                        <div id="calendar" class="tablelist column_int fix">
+                    
+                		
+                        </div>
+                        <!-- //日历部分 -->
+                         <?php //}
+                         ?>
+						
+						<!-- //预订选择部分 -->
+						<section class="tour_intro">
+							<nav class="tour_nav">
+								<ul class="fix">
+                                    <if value="!empty($lineinfo['reserved1'])">
+									<li class="on"><a href="javascript:void(0);">产品概要</a></li>
+                                    </if>
+                                    <if value="!empty($lineinfo['biaozhun']) or !empty($jieshoout) ">
+									<li><a href="javascript:void(0);">产品详情</a></li>
+                                    </if>
+                                    <if value="!empty($lineinfo['feeinclude']) or !empty($lineinfo['reserved2'])">
+									<li><a href="javascript:void(0);">费用说明</a></li>
+                                    </if>
+                                    <if value="!empty($lineinfo['reserved3'])">
+									<li><a href="javascript:void(0);">签证信息</a></li>
+                                    </if>
+                                    <if value="!empty($lineinfo['reserved4'])">
+									<li><a href="javascript:void(0);">退改规则</a></li>
+                                    </if>
+                                    <if value=" !empty($lineinfo['beizu'])   ">
+									<li><a href="javascript:void(0);">注意事项</a></li>
+                                    </if>
+									<li><a href="javascript:void(0);">如何预定</a></li>
+                                    <if value=" !empty($lineinfo['linedoc']) ">
+									<li><a href="javascript:void(0);">附件下载</a></li>
+                                    </if>
+								</ul>
+                                <if value="$lineinfo.expire gt time()">
+								<a href="#" class="btn_03"  style="display: none;">立即预订</a>
+                                </if>
+							</nav>
+							<div class="tour_content" >
+                                <if value="!empty($lineinfo['reserved1'])">
+								<section class="tour_detail">
+									<h3 class="tour_ttl">产品概要<a class="tour_switch min" href="javascript:void(0);"></a></h3>
+									<article class="tour_txt">
+										{$lineinfo.reserved1|html_entity_decode:@@}
+									</article>
+								</section>
+                                </if>
+                                
+                                <if value="(!empty($lineinfo['biaozhun']) && $lineinfo['biaozhun_isstyle']=='1' ) or (!empty($lineinfo['biaozhun_detail']) && $lineinfo['biaozhun_isstyle']=='2') or !empty($jieshoout) ">
+								<section class="tour_detail">
+									<h3 class="tour_ttl">产品详情<a class="tour_switch min" href="javascript:void(0);"></a></h3>
+                                    
+									<article class="tour_txt">
+                                        <!--
+                                        <if value=" !empty($lineinfo['biaozhun'])  ">
+    										<section class="plane_plan" style="margin-bottom: 20px;padding: 14px 26px;background: #f3f4f3;">
+                                               {$lineinfo.biaozhun|html_entity_decode:@@}
+    										</section>
+                                        </if>
+                                        -->
+                                        <if value="$lineinfo.biaozhun_isstyle == '1' and !empty($lineinfo['biaozhun'])">
+                                            <section class="plane_plan" style="margin-bottom: 20px;padding: 14px 26px;background: #f3f4f3;">
+                                               {$lineinfo.biaozhun|html_entity_decode:@@}
+    										</section>
+                                        </if>
+                                        <if value="$lineinfo.biaozhun_isstyle == '2' and !empty($lineinfo['biaozhun_detail'])">
+                                            <!-- pc版 航班信息 -->
+                                            <section class="plane_plan" style="margin-bottom: 20px;padding: 14px 26px;background: #f3f4f3;">
+                                                <div style="display: table;width: 100%;">
+                                                    <div style="display: table-row;color: #737880;">
+                                                        <span style="display: table-cell;padding: 0 10px;font-size: 14px;">航班信息</span>
+                                                        <span style="display: table-cell;padding: 0 10px;font-size: 14px;">航空公司</span>
+                                                        <span style="display: table-cell;padding: 0 10px;font-size: 14px;">航班号</span>
+                                                        <span style="display: table-cell;padding: 0 10px;font-size: 14px;">起飞机场</span>
+                                                        <span style="display: table-cell;padding: 0 10px;font-size: 14px;">起飞时间</span>
+                                                        <span style="display: table-cell;padding: 0 10px;font-size: 14px;">到达机场</span>
+                                                        <span style="display: table-cell;padding: 0 10px;font-size: 14px;">到达时间</span>
+                                                    </div>
+                                                    <foreach from="$lineinfo.biaozhun_detail" value="$detail" key='$key'>
+                                                    <div style="display: table-row;color: #a1a8b3;">
+                                                        <span style="display: table-cell;padding: 0 10px;font-size: 14px;">{$detail["biaozhuninfo$key"]}</span>
+                                                        <span style="display: table-cell;padding: 0 10px;font-size: 14px;">{$detail["biaozhuncompany$key"]}</span>
+                                                        <span style="display: table-cell;padding: 0 10px;font-size: 14px;">{$detail["biaozhunnum$key"]}</span>
+                                                        <span style="display: table-cell;padding: 0 10px;font-size: 14px;">{$detail["biaozhunstartairport$key"]}</span>
+                                                        <span style="display: table-cell;padding: 0 10px;font-size: 14px;">{$detail["biaozhunstarttime$key"]}</span>
+                                                        <span style="display: table-cell;padding: 0 10px;font-size: 14px;">{$detail["biaozhunendairport$key"]}</span>
+                                                        <span style="display: table-cell;padding: 0 10px;font-size: 14px;">{$detail["biaozhunendtime$key"]}</span>
+                                                    </div>
+                                                    </foreach>
+                                                </div>
+                                            </section>
+                                            <!-- end -->
+                                            
+                                            <!-- sp版 航班信息 -->
+                                            <div class="fly_info_style fix">
+                                                <h5>航班信息</h5>
+                                                <div class="fly_info_block">
+                                                    <foreach from="$lineinfo.biaozhun_detail" value="$detail" key='$key'>
+                                                    <div class="fly_item">
+                                                        <p><strong>{$detail["biaozhuninfo$key"]}</strong></p>
+                                                        <ul class="">
+                                                            <li class="ft1">{$detail["biaozhuncompany$key"]}</li>
+                                                            <li class="ft2">{$detail["biaozhunnum$key"]}</li>
+                                                            <li class="ft3">{$detail["biaozhunstartairport$key"]}</li>
+                                                            <li class="ft4">{$detail["biaozhunstarttime$key"]}</li>
+                                                            <li class="ft5">{$detail["biaozhunendairport$key"]}</li>
+                                                            <li class="ft6">{$detail["biaozhunendtime$key"]}</li>
+                                                        </ul>
+                                                    </div>
+                                                    </foreach>
+                                                </div>
+                                            </div>
+                                            <!-- end -->
+                                            
+                                        </if>
+                                        
+										<div class="tour_list_show">
+                                            <if value="$lineinfo.isstyle=='2' && !empty($jieshoout)">
+    											<ul class="tour_day_list">
+    												{$daysout}
+    											</ul>
+                                                {$jieshoout} 
+                                            <else/>
+                                                {$jieshoout|html_entity_decode:@@}
+                                            </if> 
+										</div>
+                                        
+									</article>
+								</section>
+                                </if>
+                                
+                                <if value="!empty($lineinfo['feeinclude']) or !empty($lineinfo['reserved2'])">
+								<section class="tour_detail">
+									<h3 class="tour_ttl">费用说明<a class="tour_switch min" href="javascript:void(0);"></a></h3>
+									<article class="tour_txt">
+                                        <if value=" !empty($lineinfo['feeinclude'])  ">
+                                            <div class="pay_ttl">费用包含</div>
+                                            <div class="pay_content">{$lineinfo.feeinclude|html_entity_decode:@@|nl2br:@@}</div>
+                                        </if>
+										<if value=" !empty($lineinfo['reserved2'])  ">
+                                            <div class="pay_ttl">费用不包含</div>
+                                            <div class="pay_content">{$lineinfo.reserved2|html_entity_decode:@@|nl2br:@@}</div>
+                                        </if>
+									</article>
+								</section>
+                                </if>
+                                
+                                <if value="!empty($lineinfo['reserved3'])">
+								<section class="tour_detail">
+									<h3 class="tour_ttl">签证信息<a class="tour_switch min" href="javascript:void(0);"></a></h3>
+									<article class="tour_txt">
+										<div>
+											{$lineinfo.reserved3|html_entity_decode:@@|nl2br:@@}
+										</div>
+									</article>
+								</section>
+                                </if>
+                                
+                                <if value="!empty($lineinfo['reserved4'])">
+								<section class="tour_detail">
+									<h3 class="tour_ttl">退改规则<a class="tour_switch min" href="javascript:void(0);"></a></h3>
+									<article class="tour_txt">
+										<div>
+											{$lineinfo.reserved4|html_entity_decode:@@|nl2br:@@}
+										</div>
+									</article>
+								</section>
+                                </if>
+                                
+                                <if value=" !empty($lineinfo['beizu'])   ">
+								<section class="tour_detail">
+									<h3 class="tour_ttl">注意事项<a class="tour_switch min" href="javascript:void(0);"></a></h3>
+									<article class="tour_txt">
+										<div>
+											{$lineinfo.beizu|html_entity_decode:@@|nl2br:@@}
+										</div>
+									</article>
+								</section>
+                                </if>
+                                
+								<section class="tour_detail">
+									<h3 class="tour_ttl">如何预定<a class="tour_switch min" href="javascript:void(0);"></a></h3>
+									<article class="tour_txt">
+                                        <if value=" !empty($lineinfo['payment'])">
+                                        <div>
+										  {$lineinfo.payment|html_entity_decode:@@}
+                                        </div>
+                                        <else />
+                                        <p class="center_img pc_img">
+											<img width="940" height="220" src="__TEMPLATE__/common/images/detail/order_step.gif">
+										</p>
+										<p class="center_img mobile_img">
+											<img src="__TEMPLATE__/common/images/detail/m_order_step.gif">
+										</p>
+                                        </if>
+									</article>
+								</section>
+                                
+                                <if value=" !empty($lineinfo['linedoc'])   ">
+								<section class="tour_detail">
+									<h3 class="tour_ttl">附件下载<a class="tour_switch min" href="javascript:void(0);"></a></h3>
+									<article class="tour_txt">
+                                        <ul class="downloadicon fix">
+                                            {$lineinfo.linedocHtml}
+                                        </ul>
+									</article>
+								</section>
+                                </if>
+							</div>
+						</section>
+					</div>
+                    
+					<div class="detail_right_content">
+						<div class="hotline_block">
+							<p class="ttl"><img src="__TEMPLATE__/lines/images/detail/hotline_ttl.png" width="101" height="28" alt="咨询热线"></p>
+							
+							<div class="hotline_intro">
+								<div>{$lineinfo.hotlinetel}</div>
+								<?php echo $lists["jobtime"][$lineinfo['webid']];?>
+							</div>
+						</div>
+                        
+                        <if value=" !empty($hostLines)">
+						<div class="hot_products_rec">
+                            <p class="ttl">推荐产品</p>
+							<ul>
+                                <foreach from="$hostLines" value="$hotlineD" >
+								<li>
+									<a href="/lines/detail/{$hotlineD.id}.html">
+                                        <if value="$hotlineD.linepic">
+										<div class="img"><img src="__ROOT__/{$hotlineD.linepic}" width="60" height="60" alt=""/></div>
+                                        <else/>
+                                        <div class="img"><img src="__TEMPLATE__/common/images/60x60_default.jpg" width="60" height="60" alt=""/></div>
+                                        </if>
+										<div class="txt">
+                                            <span>{$hotlineD.linename|mb_substr:@@,0,20,'utf-8'}...</span>
+                                            <strong class="price_one">
+                                                <if value="B2BLOGIN" >
+                                                    <if value="$hotlineD.b2blineprice=='0' or $hotlineD.b2blineprice == ''">电询<else/>￥{$hotlineD.b2blineprice}起</if>
+                                                <else/>
+                                                    <if value="$hotlineD.lineprice=='0' or $hotlineD.lineprice == ''">电询<else/>￥{$hotlineD.lineprice}起</if>
+                                                </if>
+                                                
+                                            </strong>
+                                        </div>
+									</a>
+								</li>
+                                </foreach>
+							</ul>
+						</div>
+                        </if>
+                        <include file="__TEMPLATE__/common/inc/rightside.lbi" />
+					</div>
+					<!-- //详细页面左侧 -->
+				</div>
+			</div>
+
+	</div>
+    <input type="hidden" id="lineid" value="{$lineinfo.id}"/>
+	<!-- //中间内容 -->
+	<!-- 底部 -->
+        <include file="__TEMPLATE__/common/inc/all_footer.lbi" />
+	<!-- //底部 -->
+	<script src="__TEMPLATE__/common/scripts/jsloader.js" type="text/javascript"></script>
+	<script src="__TEMPLATE__/common/scripts/jquery.ad-gallery.min.js" type="text/javascript"></script>
+	<script src="__TEMPLATE__/common/scripts/detail.js" type="text/javascript"></script>
+    <script src="__TEMPLATE__/common/scripts/owl.carousel.js" type="text/javascript"></script>
+    <script src="__TEMPLATE__/common/scripts/calendar.js" type="text/javascript"></script>
+    <script src="__TEMPLATE__/common/scripts/GetCNDate.js" type="text/javascript"></script>
+	<script>
+		var evenSelect;
+		if(IsPC()){
+	        evenSelect = true; //是否启用两个日历框
+	    }else{
+	        evenSelect = false; 
+	    }
+        $(function(){
+			//navBannerOn(1);
+			var galleries = $('.ad-gallery').adGallery();
+			//mobile版
+           var ww = $(window).width();
+           if(ww <= 767){//小于767时才触发
+            var mkvItem = $("#md_kv").find(".item");
+            if(mkvItem.length > 1){
+             $("#md_kv").owlCarousel({
+              items:1,
+              singleItem:true,
+              autoPlay:4000,
+              lazyLoad:true,
+              transitionStyle : "fade"
+                 
+             });
+            }else{
+             var thisSrc = mkvItem.find("img").attr("data-src");
+             mkvItem.find("img").attr("src",thisSrc);
+            }
+           }
+        			
+            
+            $(".tc_class a").click(function(){
+
+                 var suitid = $(this).attr('data-suitid');
+                 var lineid = $("#lineid").val();
+                 //$(this).addClass('on').siblings().removeClass('on');
+                 //$(this).parent("li").addClass('on').siblings().removeClass('on');
+                 //alert(suitid);
+                 getOptionList(suitid);
+                 <?php 
+                 //if(IN_ADMIN){
+                    ?> 
+                    //getCalendar(suitid,lineid);
+                 <?php //}
+                 ?>
+                 //getCalendar(suitid,lineid);
+        
+             })
+             
+             var tsuit = $(".tc_class li");
+            //var suitnow = $(".tc_class li.on").next();
+            if( tsuit.length < 1){
+                //noRecord=true;
+                $(".booking_select").children().hide();
+                $('.firstorder').hide();
+                $('.price_one',$('.booking_price')).hide();
+                $(".booking_select").html("<p class='txt'>当前线路无套餐</p>");
+                 //getCalendar(suitid,lineid);
+                //return;
+            }else{
+                $(".tc_class a").first().trigger('click');
+            }
+             
+     
+		});
+        var currentCalendar;
+        function changePrice(){
+            //alert('a');
+              /*if(!$("#date_list")){
+                return ;
+              }*/
+              /*if(noRecord){
+                 return ;
+              }*/
+              //alert($("#date_list"));
+              //alert($("#date_list").val());
+              if($("#date_list").val()==null){
+                $('.price_one',$('.booking_price')).hide();
+                $(".firstorder").hide();
+                return;
+              }else{
+                $('.price_one',$('.booking_price')).show();
+                $(".firstorder").show();
+              }
+              //alert($("#date_list").val());
+              var datevalue = $("#date_list").val();//当前选择的日期
+        	  var adultprice = $("#date_list").find("option:selected").attr("data-price"); //成人价格
+        	  var childprice = $("#date_list").find("option:selected").attr("data-childprice");//儿童价格
+              var oldprice = $("#date_list").find("option:selected").attr("data-oldprice");//婴儿价格
+        	  var suitid = $(".tc_class a.on").attr('data-suitid');
+        	  var lineid = $("#lineid").val();
+        	  var adultnum = $("#adultnum").val();
+        	  var childnum = $("#childnum").val();
+              var oldnum = $("#oldnum").val();
+              
+              var adulttotalprice = adultnum * adultprice;
+              var childtotalprice = childnum * childprice;
+              var oldtotalprice = oldnum * oldprice;
+              totalprice = childtotalprice + adulttotalprice + oldtotalprice;
+              $('.totalprice').html(totalprice);
+              //$(".firstorder").show();
+              var id2=$('a',$('li.on',$(".tc_class"))).attr('data-suitid');
+              //alert(id2);
+              
+              var datearr = datevalue.split('-');
+              var yearstr=parseInt(datearr[0]);
+              var monthstr=parseInt(datearr[1]);
+              var daystr=parseInt(datearr[2]);
+              if(currentCalendar){
+                currentCalendar.reNew(document.getElementById('calendar'),id2,"",evenSelect,false,false,yearstr,monthstr,daystr,lineid);
+                $("#calendar").find("td").children("div").removeClass("calendarsel");
+                  //alert(datevalue);
+                  $("div[datetime='"+datevalue+"']").addClass("calendarsel");
+              }
+              
+              
+              
+            
+        }
+        function changePrice2(){
+            /*if(!$("#date_list")){
+                return ;
+              }*/
+            /*if(noRecord){
+                 return ;
+              }*/
+              if($("#date_list").val()==null){
+                $(".firstorder").hide();
+                $('.price_one').hide();
+                return;
+              }else{
+                $(".firstorder").show();
+                $('.price_one').show();
+              }
+              var datevalue = $("#date_list").val();//当前选择的日期
+        	  var adultprice = $("#date_list").find("option:selected").attr("data-price"); //成人价格
+        	  var childprice = $("#date_list").find("option:selected").attr("data-childprice");//儿童价格
+              var oldprice = $("#date_list").find("option:selected").attr("data-oldprice");//婴儿价格
+        	  var suitid = $(".tc_class a.on").attr('data-suitid');
+        	  var lineid = $("#lineid").val();
+        	  var adultnum = $("#adultnum").val();
+        	  var childnum = $("#childnum").val();
+              var oldnum = $("#oldnum").val();
+              
+              var adulttotalprice = adultnum * adultprice;
+              var childtotalprice = childnum * childprice;
+              var oldtotalprice = oldnum * oldprice;
+              totalprice = childtotalprice + adulttotalprice + oldtotalprice;
+              $('.totalprice').html(totalprice);
+              $(".firstorder").show();    
+              //currentCalendar.reNew(document.getElementById('calendar'),suitid,"",true,false,false,'2016','5','1',lineid);
+              
+            
+        }
+        
+        
+        //var noRecord=false;
+        function getOptionList(suitid)
+        {
+            noRecord=false;
+            var lineid = $("#lineid").val();
+            $.ajax({
+             type:'POST',
+             url:CONTROL+'&m=ajax_suitoption',
+             dataType:'json',
+             data:'dopost=getoptionlist&suitid='+suitid+'&lineid='+lineid,
+             success:function(data){
+                //alert(data.monthli)
+                if( data.monthli == '' ){
+                    /* 自动跳转到下一套餐
+                    var suit = $(".tc_class li");
+                    var suitnow = $(".tc_class li.on").next();
+                    if( suitnow.length == '0' ){
+                        $("#date_list").parent().html("暂无合适套餐");
+                        return ;
+                    }
+                    var suitid = $("a",suitnow).attr('data-suitid');
+                    getOptionList(suitid);
+                    suitnow.trigger('click');
+                    */
+                    var suit = $(".tc_class li");
+                    //var suitnow = $(".tc_class li.on").next();
+                    if( suit.length <= 1){
+                        //noRecord=true;
+                        $(".booking_select").children().hide();
+                        $('.firstorder').hide();
+                        $('.price_one',$('.booking_price')).hide();
+                        $(".booking_select").html("<p class='txt'>当前线路无库存</p>");
+                        $("#calendar").html('');
+                        $(".calendar_intro").hide();
+                         //getCalendar(suitid,lineid);
+                        return;
+                    }
+                    /*if( suitnow.length == '0' ){
+                        $(".booking_select").children().hide();
+                        $(".booking_select").append("<p class='txt'>当前套餐无库存，请选择其他套餐</p>");
+                        return ;
+                    }*/else{
+                        //noRecord=true;
+                        //$(".booking_select").html("当前套餐无库存，请选择其他套餐");
+                        $(".booking_select").children().hide();
+                        $('.firstorder').hide();
+                         $('.price_one',$('.booking_price')).hide();
+                        $(".booking_select").append("<p class='txt'>当前套餐无库存，请选择其他套餐</p>");
+                        $("#calendar").html('');
+                        $(".calendar_intro").hide();
+                         //getCalendar(suitid,lineid);
+                        return ;
+                    }
+                    
+                }
+                
+                $(".booking_select p").empty();
+                $(".booking_select").children().show();
+                 $('.price_one',$('.booking_price')).show();
+                $('.firstorder').show();
+                $(".calendar_intro").show();
+                 if(data)
+                 {
+                     $("#date_list").empty(); //先清空
+                     $(data.monthli).appendTo($("#date_list"))
+                    // $("#jifenbook").html(data.jifen.jifenbook);
+                     //$("#jifentprice").html(data.jifen.jifentprice);
+
+                     if(data.hasadult == '1'){
+                         $('#adultcontain').show();
+                     }
+                     else
+                     {
+                         $('#adultcontain').hide();
+                     }
+                     if(data.haschild == '1'){
+                         $('#childcontain').show();
+                     }
+                     else
+                     {
+                        //alert('aaa');
+                         $('#childcontain').hide();
+                     }
+                     if(data.hasold == 1){
+                         $('#oldcontain').show();
+                     }
+                     else
+                     {
+                         $('#oldcontain').hide();
+                     }
+                     
+                     var str = $("#date_list").html();
+                     
+                    changePrice();
+                    /*var suitid1 = $(this).attr('data-suitid');
+                    var lineid1 = $("#lineid").val();*/
+                    getCalendar(suitid,lineid);
+                 }
+             }
+            })
+            
+        }
+        
+        //获取日历报价
+         function getCalendar(suitid,lineid)
+         {
+    
+             showCalendar('calendar',suitid,function(){$(".calendar:first").css("margin-right","18px")},lineid);
+    //          var a = new Calendar();
+			 // a.show(document.getElementById('calendar'),suitid,function(){$(".calendar:first").css("margin-right","18px")},lineid);
+			 // a.reNew(document.getElementById('calendar'),suitid,"",true,false,false,"2016","5","01",lineid);
+
+         }
+        
+        //订购 AddBy xie
+        $(".btn_03").click(function(){
+            var lineid = {$lineinfo.id};
+            var suitid = $(".tc_class").find(".on").find("a").attr("data-suitid");
+            var usedate = $("#date_list").val();;
+            var adultnum = $("#adultnum").val();
+        	var childnum = $("#childnum").val();
+            var oldnum = $("#oldnum").val();
+            var urlroot = "{$urlroot}";
+
+            window.location.href = ROOT + urlroot +"/index.php?a=index&c=booking&m=index&lineid="+lineid+"&suitid="+suitid+"&usedate="+usedate+"&oldnum="+oldnum+"&adultnum="+adultnum+"&childnum="+childnum;
+        })
+        
+        //日历点击预订
+        function setBeginTime(year,month,day,price,childprice,lineid,suitid)
+        {
+            var lineid = {$lineinfo.id};
+        	var usedate=year+"-"+pad(month,2)+"-"+pad(day,2);
+            //$("#date_list[value='"+usedate+"']").attr('selected','selected');
+            var sel = document.getElementById("date_list");
+            for (var i = 0; i < sel.length; i++) {
+                if (sel[i].value == usedate) {
+                    //后台传过来的数据
+                    sel[i].selected = true;
+                }
+            }
+            changePrice2();
+            $("#calendar").find("td").children("div").removeClass("calendarsel");
+            $("div[datetime='"+usedate+"']").addClass("calendarsel");
+            //var urlroot = "{$urlroot}";
+            
+            //window.location.href = ROOT + urlroot +"/index.php?a=index&c=booking&m=index&lineid="+lineid+"&suitid="+suitid+"&usedate="+usedate+"&oldnum=0&adultnum=1&childnum=0";
+        	
+        }
+
+        
+        function pad(num, n) {  
+          var len = num.toString().length;  
+            while(len < n) {  
+                num = "0" + num;  
+                len++;  
+            }  
+            return num;    
+        }
+        
+
+        function fpMonth(){
+        	var datevalue = $("#date_list").val();//当前选择的日期
+        	var id2=$('a',$('li.on',$(".tc_class"))).attr('data-suitid');
+        	var datearr = datevalue.split('-');
+			var yearstr=parseInt(datearr[0]);
+			var monthstr=parseInt(datearr[1]);
+			var daystr=parseInt(datearr[2]);
+			if(currentCalendar){
+				currentCalendar.reNew(document.getElementById('calendar'),id2,"",evenSelect,false,false,yearstr,monthstr,daystr,lineid);
+			}
+        }
+        
+
+//alert(pad(3,2));
+	</script>
+</body>
+</html>

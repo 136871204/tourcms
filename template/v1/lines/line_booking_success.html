@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="Description" content="{$zh.config.description}" />
+	<meta name="keywords" content="{$zh.config.keywords}" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<meta name="applicable-device" content="pc,mobile"/>
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=0;" />
+	<title>japan_travel</title>
+    <pagejs/>
+	<link rel="stylesheet" href="__TEMPLATE__/common/css/import.css"/>
+	<link rel="stylesheet" href="__TEMPLATE__/common/css/list.css"/>
+    <link rel="stylesheet" href="__TEMPLATE__/common/css/base2.css"/>
+	<link rel="stylesheet" href="__TEMPLATE__/common/css/jquery.ad-gallery.css"/>
+    <link rel="stylesheet" href="__TEMPLATE__/common/css/mobile.css"/>
+
+	<!--[if lt IE 9]>
+	<script src="__TEMPLATE__/common/scripts/html5.js"></script>
+	<script src="__TEMPLATE__/common/scripts/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body id="japan_travel">
+	<!-- 头部 -->
+        <include file='__TEMPLATE__/common/inc/all_header.lbi'/>
+	<!-- //头部 -->
+	<!-- 中间内容 -->
+	<div id="content">
+        <div class="main_content">
+            <div class="wrapper" style="position: relative;">
+				<!-- 路径 -->
+				<div class="path">
+					<a href="/">首页</a> &gt; <span class="stepnav">预订成功</span>
+				</div>
+				<!-- //路径 -->
+				<div class="step_area">
+					<ol class="fix">
+						<li><div><i>1</i><span>填写订单</span></div></li>
+						<li><div><i>2</i><span>确认订单</span></div></li>
+						<li class="on"><div><i>3</i><span>预订成功</span></div></li>
+					</ol>
+					<span class="line"></span>
+				</div>
+            </div>
+        </div>
+        <div class="no_result" style="padding: 200px 0;">预约成功，等待客服联系</div>
+	</div>
+    
+    <include file="__TEMPLATE__/common/inc/all_footer.lbi" />
+</body>
+</html>

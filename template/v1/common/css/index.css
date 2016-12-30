@@ -1,0 +1,110 @@
+.index_banner{position: relative;height: 290px;overflow: hidden;}
+/*.index_banner .kv_detail .item{position: relative;height: 290px;background-position: center center;background-repeat: no-repeat;}
+.index_banner .kv_detail .item a{position: absolute;display: block;width: 100%;height: 100%;}*/
+.index_banner .owl-controls{position: relative;margin-top: -24px;}/*
+.index_banner .owl-controls .owl-nav{display: none;}
+.index_banner .owl-page{margin: 0 5px;display: inline-block;}*/
+.index_banner .vui-buttons{left: 0;width: 100%;text-align: center;}
+.index_banner .vui-buttons .vui-button{display: inline-block;margin: 5px;float: none;opacity: 1;border-radius: 0;width: 64px;height: 8px;background: #778a9b;}
+.index_banner .vui-buttons .vui-button.vui-button-cur{background: #1475fa;}
+/*.index_banner .owl-page.active span, 
+.index_banner .owl-page:hover span{background: #1475fa;}
+.index_banner .owl-controls .owl-buttons{display: none;}*/
+.index_banner .wrapper{position: relative;margin-top: -286px;}
+.index_banner .vui-slider .vui-prev{display: none;}
+.index_banner .vui-slider .vui-next{display: none;}
+.index_banner .kv_item{background-position: center center;}
+.index_banner .vui-slider .vui-item .kv_item a{position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
+
+.travel_content{margin-bottom: 40px;overflow: hidden;}
+.travel_content .travel_tab{position: relative;border-bottom: 1px solid #ccd3dc;}
+.travel_content .travel_tab dl{margin-bottom: -1px;}
+.travel_content .travel_tab dl dt{float: left;position: relative;display: inline;margin-right: 20px;}
+.travel_content .travel_tab dl dt ul{position: absolute;left: 0px;top: 0;display: none;padding-left: 100px;width: 400px;}
+.travel_content .travel_tab dl dt:hover ul{display: block;}
+.travel_content .travel_tab dl dt ul li{float: left;display: inline;margin-right: 3px;}
+.travel_content .travel_tab dl dt ul li a{display: block;padding: 0 8px;height: 24px;line-height: 24px;color: #fff;font-size: 14px;border-bottom: none;-webkit-border-radius: 4px;border-radius: 4px;behavior: url(/common/scripts/PIE.htc);}
+.travel_content .travel_tab dl dt ul li.sh a{background: #2569c8;}
+.travel_content .travel_tab dl dt ul li.bj a{background: #fc4169;}
+.travel_content .travel_tab dl dt ul li.gz a{background: #ff5926;}
+.travel_content .travel_tab dl dt ul li.sz a{background: #75b347;}
+.travel_content .travel_tab dl dt a{padding-bottom: 10px;display: block;border-bottom: 1px solid #3580e8;color: #3580e8;font-size: 16px;line-height: 22px;font-weight: bold;}
+.travel_content .travel_tab dl dd{float: left;display: inline;}
+.travel_content .travel_tab dl dd ul li{float: left;display: inline;margin-right: 10px;}
+.travel_content .travel_tab dl dd ul li a{display: block;padding: 0 16px;height: 24px;line-height: 24px;-webkit-border-radius: 12px;border-radius: 12px;behavior: url(/common/scripts/PIE.htc);font-size: 14px;color: #3c3e42;outline: none;}
+.travel_content .travel_tab dl dd ul li:hover a,.travel_content .travel_tab dl dd ul li.on a{background: #3580E8;color: #fff;}
+.travel_content .travel_tab .more{position: absolute;right: 0;top: 0;font-size: 16px;color: #3580e8;}
+.travel_content .travel_list{margin-right: -20px;}
+.travel_content .travel_list li{position: relative;float: left;display: inline;margin: 10px 10px 0 0;width: 228px;border-bottom: 1px solid #dbe4f0;}
+/*
+.travel_content .travel_list li{position: relative;float: left;display: inline;margin: 20px 20px 0 0;width: 300px;border-bottom: 1px solid #dbe4f0;}
+*/
+.travel_content .travel_list li .img{display: block;font-size: 0;overflow: hidden;}
+.travel_content .travel_list li .img img{transition:All 0.4s ease-in-out;-webkit-transition:All 0.4s ease-in-out;-moz-transition:All 0.4s ease-in-out;-o-transition:All 0.4s ease-in-out; width:228px; height:125px;}
+.travel_content .travel_list li:hover .img img{transform:scale(1.1);-webkit-transform:scale(1.1);-moz-transform:scale(1.1);-o-transform:scale(1.1);-ms-transform:scale(1.1);}
+.travel_content .travel_list li .tag_area{position: absolute;top: 6px;left: 6px;z-index: 2;}
+.travel_content .travel_list li .tag_area ul{margin-right: -6px;}
+.travel_content .travel_list li .tag_area ul li{float: left;display: inline;margin: 0 6px 6px 0;width: auto;border: none;}
+.travel_content .travel_list li dl{padding: 8px;/*height: 170px;*/background: #fff;}
+.travel_content .travel_list li dl dt{position: relative;margin-bottom: 10px;}
+.travel_content .travel_list li dl dt span{color: #3580e8;font-size: 14px;font-weight: bold;}
+.travel_content .travel_list li dl dt ul{position: absolute;right: 0;top: 0;}
+.travel_content .travel_list li dl dt ul li{float: left;margin: 0 0 0 10px;display: inline;width: auto;border-bottom: none;}
+.travel_content .travel_list li dl dt ul li span{display: block;padding: 0 5px;height: 18px;line-height: 18px;border: 1px solid #3580e8;-webkit-border-radius: 4px;border-radius: 4px;behavior: url(/common/scripts/PIE.htc);color: #3580e8;font-weight: normal;}
+.travel_content .travel_list li dl dd{}
+.travel_content .travel_list li dl .main_intro{margin-bottom: 5px;width: 100%;/*height: 40px;line-height: 40px;*/font-size: 14px;color: #3c3e42;/*overflow: hidden;*/}
+.travel_content .travel_list li dl .main_intro .holiday{color: #ff5926;}
+.travel_content .travel_list li:hover .main_intro{color: #fc4169;}
+.travel_content .travel_list li dl .sec_intro{margin-bottom: 5px;height: 40px;line-height: 20px;color: #8e949e;font-size: 14px;font-family: "simsun";overflow: hidden; display:none;}
+/*
+.travel_content .travel_list li dl .sec_intro{margin-bottom: 5px;height: 40px;line-height: 20px;color: #8e949e;font-size: 14px;font-family: "simsun";overflow: hidden;}
+*/
+.travel_content .travel_list li dl .date_intro{margin-bottom: 8px;padding-bottom: 8px;border-bottom: 1px solid #e7eaee;overflow: hidden; position:relative;}
+.travel_content .travel_list li dl .date_intro ul.t_tag_list{float: left;}
+.travel_content .travel_list li dl .date_intro .branch_store{/*float: right;*/ position:absolute; right:0; top:0;color: #8e949e;font-size: 14px;}
+.travel_content .travel_list li dl .price_intro{position: relative;height: 29px;line-height: 29px;text-align: right;}
+.travel_content .travel_list li dl .price_intro .org{margin-right: 10px;color: #8e949e;font-size: 12px;}
+.travel_content .travel_list li dl .price_intro .now{color: #fc4169;font-size: 14px;}
+.travel_content .travel_list li dl .price_intro .now strong{font-size: 22px;}
+.travel_content .travel_list li dl .price_intro .cmot{position: absolute;left: 0; top:2px;color: #8e949e;font-weight: bold;font-size: 14px;}
+#index .travel_content .travel_list li dl .price_intro .cmot{font-size: 16px;}
+.travel_content .travel_list li ul.t_tag_list li{margin: 0 5px 0 0!important;}
+.travel_list_detail{display: none;}
+.travel_list_detail.on{display: block;}
+
+
+
+.aside_adv{margin-bottom: 30px;}
+.aside_adv dt{position: relative;border-bottom: 1px solid #ccd3dc;height: 33px;}
+.aside_adv dt span{margin-bottom: 20px;padding-bottom: 10px;float: left;display: block;border-bottom: 1px solid #75b347;color: #75b347;font-size: 16px;line-height: 22px;}
+.aside_adv dd{margin-bottom: 10px;clear: both;font-size: 0;}
+.new_course{width: 100%;height: 200px;overflow: hidden;}
+.new_course .new_course_detail ul{margin-bottom: -10px;}
+.new_course .new_course_detail ul li{position: relative;margin-bottom: 10px;overflow: hidden;}
+.new_course .new_course_detail ul li span.img{float: left;margin-right: 6px;width: 60px;height: 60px;overflow: hidden;}
+.new_course .new_course_detail ul li span.txt{display: block;padding: 10px 30px 10px 0;height: 60px;background: #fff;font-size: 14px;color: #535962;}
+.new_course .new_course_detail ul li span.ico_new{position: absolute;right: 0;top: 0;display: block;width: 24px;height: 20px;background: url("../images/ico/ico_new.gif");}
+.new_course .new_course_detail ul li:hover span.txt{color: #75b347;}
+.aside_adv dt .new_course_fun{position: absolute;right: 0;top: 0;}
+.aside_adv dt .new_course_fun li{float: left;display: inline;margin-left: 10px;}
+.aside_adv dt .new_course_fun li a{display: block;width: 18px;height: 18px;}
+.aside_adv dt .new_course_fun li a.prev{background: url("../images/ico/ico_prev_01.gif");}
+.aside_adv dt .new_course_fun li a.next{background: url("../images/ico/ico_next_01.gif");}
+.aside_adv dt .new_course_fun li a.up{background: url("../images/ico/ico_up_01.gif");}
+.aside_adv dt .new_course_fun li a.down{background: url("../images/ico/ico_down_01.gif");}
+.aside_adv dt .new_course_fun li a.up:hover{background: url("../images/ico/ico_up_01_h.gif");}
+.aside_adv dt .new_course_fun li a.down:hover{background: url("../images/ico/ico_down_01_h.gif");}
+.aside_adv .owl-carousel .owl-item img{width: 60px;height: 60px;}
+
+
+/* 20151208 by yao 横穿的banner */
+.cross_banner_area{position: fixed;bottom: 0;left: 0;z-index: 9999;}
+.cross_banner_area.long{width: 100%;}
+.cross_banner_area .cross_btn{display: none;}
+.cross_banner_area .cross_btn a{position: relative;bottom: 0;/*left: -130px;*/left:0;}
+.cross_banner_area .cross_banner_content{position: relative;left: 0;width: 100%; display: block;}
+.cross_banner_area .cross_banner_content .bg{position: absolute;left: 0;bottom: 0;width: 100%;height: 149px;background: #000;opacity: 0.7;}
+.cross_banner_area .cross_banner_content .close{position: absolute;right: 0;bottom: 80px;display: block;width: 36px;height: 36px;background: url("../images/ico/ico_banner_close.png");}
+.cross_banner_area .cross_banner_content .cross_banner_detail{position: relative;bottom: 10px;margin: 0 auto;width: 1200px;z-index: 2;}
+.cross_banner_area .cross_banner_content .cross_banner_detail p{text-align: center;font-size: 0;}
+
